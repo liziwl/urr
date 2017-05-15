@@ -9,11 +9,11 @@
 
     <!-- Bootstrap -->
     <!-- Latest compiled and minified CSS -->
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -29,22 +29,26 @@
       <div class="col-md-9" role="main">
           <h1 class="jumbotron-heading">Classified Reviews</h1>
           <p>#TODO: add some description here...{{selected_file}}</p>
-      <table class="table table-striped">
-          <thead class="thead-inverse">
-          <tr>
-            <td>#</td> <td>Review</td> <td>Classes</td>
-          </tr>
-          </thead>
+        <div class="table-responsive">
+          <table class="table table-striped">
+              <thead class="header-bold thead-inverse">
+              <tr>
+                <td>#</td> <td>REVIEW</td> <td>CLASSES</td>
+              </tr>
+              </thead>
 
-          <tbody>
-            {% for row in data %}
-            <tr><td>#</td> <td>{{row.reviewText}}</td> <td>Classes</td></tr>
-            {% endfor %}
-          </tbody>
-      </table>
+              <tbody>
+                {% for row in data %}
+                <tr><td>#</td> <td>{{row.reviewText}}</td> <td>{{row.predictions}}</td></tr>
+                {% endfor %}
+              </tbody>
+          </table>
+        </div>
+        <!--
       <div class="row">
         <button type="button" onclick="disableButtonState(this)" name="enable">Enable</button>
       </div>
+      -->
       {% if paging_info.has_prev %}
         <a href="{{ url_for('classify_reviews', page=paging_info.prev) }}">&lt;&lt; Prev</a>{% else %}&lt;&lt; Prev
       {% endif %} |

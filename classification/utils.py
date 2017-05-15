@@ -154,6 +154,7 @@ def classify_and_save_results(filepath, text_field, categories):
     diff = time.time() - time_1
     time_1 = time.time()
     print("Preprocessing: %.2f seconds" % diff)
+    pred_categories = []
     for category in categories:
         print("Category: %s" % category)
 
@@ -163,11 +164,13 @@ def classify_and_save_results(filepath, text_field, categories):
         time_1 = time.time()
         print("Loading text_prep: %.2f seconds" % diff)
         y_pred = clf.predict(X.toarray())
-        data["PREDICTED_" + category] = y_pred
+        data["PREDICTED_" + category] = [category[3:] if pred == 1 else "" for pred in y_pred]
+        pred_categories.append("PREDICTED_" + category)
         diff = time.time() - time_1
         time_1 = time.time()
         print("Predicting %.2f" % diff)
-
+    print(pred_categories)
+    data["predictions"] = data[pred_categories].apply(lambda x: ' '.join(x), axis=1)
     new_filepath = filepath[:-4] + "_4.csv"
     data.to_csv(new_filepath, encoding="ISO-8859-1", index=False)
     diff = time.time() - time_1

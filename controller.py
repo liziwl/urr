@@ -54,7 +54,8 @@ def build_paging_info(data, page=0):
 
 def compute_new_data(selected_file):
     global saved_data
-    data = classify_and_save_results("./user_reviews_files/" + selected_file, "reviewText", ("IS_SECURITY",))
+    data = classify_and_save_results("./user_reviews_files/" + selected_file, "reviewText",
+                                     ("IS_SECURITY", "IS_PRIVACY", "IS_ERROR"))
     saved_data["selected_file"] = selected_file
     saved_data["data"] = data
     return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)
