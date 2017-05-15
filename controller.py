@@ -52,10 +52,17 @@ def build_paging_info(data, page=0):
     }
 
 
+def build_categories_list():
+    categories_lists = cat_subcat_dict.values()
+    categories = []
+    for category_list in categories_lists:
+        categories.extend(category_list)
+    return ["IS_" + category for category in categories]
+
+
 def compute_new_data(selected_file):
     global saved_data
-    data = classify_and_save_results("./user_reviews_files/" + selected_file, "reviewText",
-                                     ("IS_SECURITY", "IS_PRIVACY", "IS_ERROR"))
+    data = classify_and_save_results("./user_reviews_files/" + selected_file, "reviewText", build_categories_list())
     saved_data["selected_file"] = selected_file
     saved_data["data"] = data
     return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)

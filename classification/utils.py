@@ -62,7 +62,7 @@ def preprocess_review(review):
     return ' '.join([stemmer.stem(word) for word in filtered_words])
 
 
-def create_preprocessing_pipeline(text_data)
+def create_preprocessing_pipeline(text_data):
     text_prep = Pipeline([("vect", CountVectorizer(min_df=5, ngram_range=(1, 3), stop_words="english")),
                           ("tfidf", TfidfTransformer(norm=None))])
     text_prep.fit(text_data)
