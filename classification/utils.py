@@ -62,18 +62,38 @@ def preprocess_review(review):
     return ' '.join([stemmer.stem(word) for word in filtered_words])
 
 
-def preprocess_review_data(filepath, review_field, text_prep=None):
+def create_preprocessing_pipeline(text_data)
+    text_prep = Pipeline([("vect", CountVectorizer(min_df=5, ngram_range=(1, 3), stop_words="english")),
+                          ("tfidf", TfidfTransformer(norm=None))])
+    text_prep.fit(text_data)
+    return text_prep
+
+
+def load_and_save_review_data(filepath, review_field, saved_filepath):
     data = pd.read_csv(filepath, encoding="ISO-8859-1")
-    # shuffle data
-    # data[review_field] = data[review_field].apply(lambda review: str.decode(review, "utf-8", "ignore"))
     data["prep_" + review_field] = data[review_field].apply(lambda review: preprocess_review(review))
     data = data.sample(frac=1).reset_index(drop=True)
+    joblib.dump(data, saved_filepath)
+    return data
+
+
+def get_cached_filepath(filepath):
+    filename = os.path.split(filepath)[-1][:-4] + "_prep.pkl"
+    return os.path.join(".", "preprocessed_files", filename)
+
+
+def preprocess_review_data(filepath, review_field, text_prep=None):
+    cached_filepath = get_cached_filepath(filepath)
+    if os.path.isfile(cached_filepath):
+        data = joblib.load(cached_filepath)
+        return data, text_prep.transform(data["prep_" + review_field]), text_prep
+
+    data = load_and_save_review_data(filepath, review_field, cached_filepath)
+
     if text_prep:
         return data, text_prep.transform(data["prep_" + review_field]), text_prep
 
-    text_prep = Pipeline([("vect", CountVectorizer(min_df=5, ngram_range=(1, 3), stop_words="english")),
-                         ("tfidf", TfidfTransformer(norm=None))])
-    text_prep.fit(data[review_field])
+    text_prep = create_preprocessing_pipeline(data[review_field])
     return data, text_prep.transform(data[review_field]), text_prep
 
 
