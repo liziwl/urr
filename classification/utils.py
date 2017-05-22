@@ -164,6 +164,19 @@ def train_and_save_models(filepath, review_field, categories):
         joblib.dump(model_details, os.path.join(directory, "model_details.pkl"))
 
 
+def build_categories_list():
+    categories_lists = cat_subcat_dict.values()
+    categories = []
+    for category_list in categories_lists:
+        categories.extend(category_list)
+    return ["IS_" + category for category in categories]
+
+
+def preprocess_category_name(category):
+    lower_category = category[3:].lower()
+    return "_".join(lower_category.split())
+
+
 def classify_and_save_results(filepath, text_field, categories):
     time_1 = time.time()
     text_prep = joblib.load(os.path.join(".", "classification", "internal_data", "text_prep.pkl"))
@@ -184,13 +197,12 @@ def classify_and_save_results(filepath, text_field, categories):
         time_1 = time.time()
         print("Loading text_prep: %.2f seconds" % diff)
         y_pred = clf.predict(X.toarray())
-        data["PREDICTED_" + category] = [category[3:] if pred == 1 else "" for pred in y_pred]
+        data["PREDICTED_" + category] = [preprocess_category_name(category) if pred == 1 else "" for pred in y_pred]
         pred_categories.append("PREDICTED_" + category)
         diff = time.time() - time_1
         time_1 = time.time()
         print("Predicting %.2f" % diff)
-    print(pred_categories)
-    data["predictions"] = data[pred_categories].apply(lambda x: ' '.join(x), axis=1)
+    data["predictions"] = data[pred_categories].apply(lambda cats: [cat for cat in cats if cat], axis=1)
     new_filepath = filepath[:-4] + "_4.csv"
     data.to_csv(new_filepath, encoding="ISO-8859-1", index=False)
     diff = time.time() - time_1

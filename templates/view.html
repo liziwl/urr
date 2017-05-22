@@ -20,7 +20,7 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-      <link rel="stylesheet" href="static/basic.css" type="text/css">
+      <link rel="stylesheet" href="{{ url_for('static',filename='basic.css') }}" type="text/css">
   </head>
   <body>
 
@@ -45,7 +45,7 @@
       </div>
     </nav>
 
-    <div class="container" style="height: 200px;">
+    <div class="container my-container" style="padding-top: 100px;">
         <div class="starter-template">
         <h1>User Reviews Classification</h1>
         <p class="lead">Blabla... some help descriptions</p>

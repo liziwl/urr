@@ -20,17 +20,17 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-      <link rel="stylesheet" href="static/basic.css" type="text/css">
+      <link rel="stylesheet" href="{{ url_for('static',filename='basic.css') }}" type="text/css">
   </head>
   <body style="padding-top: 0;">
 
   <div class="container">
-    <div class="row">
+    <!--<div class="row">-->
       <div class="col-md-9" role="main">
           <h1 class="jumbotron-heading">Classified Reviews</h1>
           <p>#TODO: add some description here...{{selected_file}}</p>
-        <div class="table-responsive">
-          <table class="table table-striped">
+          <div class="table-responsive">
+            <table class="table table-striped">
               <thead class="header-bold thead-inverse">
               <tr>
                 <td>#</td> <td>REVIEW</td> <td>CLASSES</td>
@@ -39,11 +39,16 @@
 
               <tbody>
                 {% for row in data %}
-                <tr><td>#</td> <td>{{row.reviewText}}</td> <td>{{row.predictions}}</td></tr>
+                <tr><td>#</td> <td>{{row.reviewText}}</td>
+                  <td>{% for prediction in row.predictions %}
+                    <span class="icon-category icon-{{prediction}} small" data-toggle="tooltip" title="{{prediction}}"></span>
+                    {% endfor %}
+                    </td>
+                </tr>
                 {% endfor %}
               </tbody>
           </table>
-        </div>
+          </div>
         <!--
       <div class="row">
         <button type="button" onclick="disableButtonState(this)" name="enable">Enable</button>
@@ -56,7 +61,7 @@
         <a href="{{ url_for('classify_reviews', page=paging_info.next) }}">Next &gt;&gt;</a>{% else %}Next&gt;&gt;
       {% endif %}
       </div>
-    </div>
+    <!--</div>-->
   </div><!-- /.container -->
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

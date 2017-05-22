@@ -1,10 +1,4 @@
-html,
-body {
-    height: 100%;
-    /*padding-top: 65px;*/
-}
-
-.container {
+.my-container {
     height: 100%;
     display: flex;
     justify-content: center;
@@ -13,4 +7,107 @@ body {
 
 .header-bold {
     font-weight: bold;
+}
+
+.icon-category {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    float: left;
+    display: block; /* This is required */
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.icon-category.icon-android_version {
+    background: url("../static/icons/android_version.png");
+    background-size: cover;
+}
+
+.icon-category.icon-app_usability {
+    background: url("../static/icons/app_usability.png");
+    background-size: cover;
+}
+
+.icon-category.icon-app_usability {
+    background: url("../static/icons/app_usability.png");
+    background-size: cover;
+}
+
+.icon-category.icon-battery {
+    background: url("../static/icons/battery.png");
+    background-size: cover;
+}
+
+.icon-category.icon-device {
+    background: url("../static/icons/device.png");
+    background-size: cover;
+}
+
+.icon-category.icon-error {
+    background: url("../static/icons/error.png");
+    background-size: cover;
+}
+
+.icon-category.icon-hardware {
+    background: url("../static/icons/hardware.png");
+    background-size: cover;
+}
+
+.icon-category.icon-licence {
+    background: url("../static/icons/licence.png");
+    background-size: cover;
+}
+
+.icon-category.icon-memory {
+    background: url("../static/icons/memory.png");
+    background-size: cover;
+}
+
+.icon-category.icon-performance {
+    background: url("../static/icons/performance.png");
+    background-size: cover;
+}
+
+.icon-category.icon-price {
+    background: url("../static/icons/price.png");
+    background-size: cover;
+}
+
+.icon-category.icon-privacy {
+    background: url("../static/icons/privacy.png");
+    background-size: cover;
+}
+
+.icon-category.icon-security {
+    background: url("../static/icons/security.png");
+    background-size: cover;
+}
+
+.icon-category.icon-ui {
+    background: url("../static/icons/ui.png");
+    background-size: cover;
+}
+
+.icon-category.normal {
+    width: 32px;
+    height: 32px;
+}
+
+.icon-category.small {
+    width: 16px;
+    height: 16px;
+}
+
+.icon-category.medium {
+    width: 64px;
+    height: 64px;
+}
+
+.icon-category.large {
+    width: 128px;
+    height: 128px;
 }

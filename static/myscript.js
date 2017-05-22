@@ -13,3 +13,7 @@ function disableButtonState(elem) {
         return false;
     }
 }
+
+$(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+});
