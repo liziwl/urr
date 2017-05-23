@@ -172,6 +172,10 @@ def build_categories_list():
     return ["IS_" + category for category in categories]
 
 
+def build_pretty_categories_list():
+    return [category[3:].lower().title() for category in build_categories_list()]
+
+
 def preprocess_category_name(category):
     lower_category = category[3:].lower()
     return "_".join(lower_category.split())

@@ -80,7 +80,7 @@ def classify_reviews(page=1):
     else:
         data, paging_info = get_paged_data(page)
     return render_template("reviews.html", selected_file=selected_file, paging_info=paging_info,
-                           data=data.itertuples(index=False))
+                           data=data.itertuples(index=False), review_categories=build_pretty_categories_list())
 
 
 if __name__ == '__main__':

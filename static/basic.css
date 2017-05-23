@@ -58,7 +58,7 @@
 }
 
 .icon-category.icon-licence {
-    background: url("../static/icons/licence.png");
+    background: url("../static/icons/licensing.png");
     background-size: cover;
 }
 
@@ -98,8 +98,8 @@
 }
 
 .icon-category.small {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
 }
 
 .icon-category.medium {
