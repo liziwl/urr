@@ -40,17 +40,10 @@
                         <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
                             Review Categories
                         </button>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" id="dropdown">
                             {% for review_category in review_categories %}
-                                <li><a href="#" class="small" data-value="option1" tabIndex="-1"><input type="checkbox"/>&nbsp;{{review_category}}</a></li>
+                                <li><a href="#" class="small" data-value="{{review_category[0]}}" id="{{review_category[0]}}" tabIndex="-1"><input type="checkbox"/>&nbsp;{{review_category[1]}}</a></li>
                             {% endfor %}
-                          <!--
-                          <li><a href="#" class="small" data-value="option2" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 2</a></li>
-                          <li><a href="#" class="small" data-value="option3" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 3</a></li>
-                          <li><a href="#" class="small" data-value="option4" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 4</a></li>
-                          <li><a href="#" class="small" data-value="option5" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 5</a></li>
-                          <li><a href="#" class="small" data-value="option6" tabIndex="-1"><input type="checkbox"/>&nbsp;Option 6</a></li>
-                          -->
                         </ul>
                     </div>
                 </div>
@@ -91,6 +84,5 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script type="text/javascript" src="{{ url_for('static', filename = 'myscript.js') }}"></script>
-
   </body>
 </html>

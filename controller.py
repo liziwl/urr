@@ -71,10 +71,18 @@ def get_paged_data(page):
     return data, build_paging_info(data)
 
 
+def extract_filtering_categories(request):
+    if request and request.json and "filtering_categories" in request.json:
+        return request.json["filtering_categories"]
+    return None
+
+
 @app.route("/reviews", methods=["POST", "GET"])
-@app.route('/reviews/<int:page>', methods=['GET', 'POST'])
+@app.route('/reviews/<int:page>', methods=["GET", "POST"])
 def classify_reviews(page=1):
-    selected_file = request.form.get('file_choice', None)
+    selected_file = request.form.get("file_choice", None)
+    filtering_categories = extract_filtering_categories(request)
+    print("Filtering categories: %s" % filtering_categories)
     if selected_file:
         data, paging_info = compute_new_data(selected_file)
     else:

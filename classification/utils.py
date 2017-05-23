@@ -173,7 +173,7 @@ def build_categories_list():
 
 
 def build_pretty_categories_list():
-    return [category[3:].lower().title() for category in build_categories_list()]
+    return zip(build_categories_list(), [category[3:].lower().title() for category in build_categories_list()])
 
 
 def preprocess_category_name(category):

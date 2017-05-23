@@ -1,19 +1,3 @@
-/**
- * Created by adelineciurumelea on 15/05/17.
- */
-
-console.log(">>>>>>>>>>>>>> Loaded...")
-
-function disableButtonState(elem) {
-    if(confirm('Are you sure you want to disable this button?') == true) {
-        elem.disabled = true;
-        alert("its done.");
-    }
-    else {
-        return false;
-    }
-}
-
 $(document).ready(function(){
     $('[data-toggle="tooltip"]').tooltip();
 });
@@ -21,7 +5,6 @@ $(document).ready(function(){
 var options = [];
 
 $( '.dropdown-menu a' ).on( 'click', function( event ) {
-    console.log(">>>>>>>>>>> ON CLICK!!!")
    var $target = $( event.currentTarget ),
        val = $target.attr( 'data-value' ),
        $inp = $target.find( 'input' ),
@@ -37,6 +20,21 @@ $( '.dropdown-menu a' ).on( 'click', function( event ) {
 
    $( event.target ).blur();
 
-   console.log( options );
+   handle_filtering(options)
    return false;
 });
+
+var handle_filtering = function(filtering_categories) {
+    data = {
+        "filtering_categories": filtering_categories
+    }
+    $.ajax({
+        type : "POST",
+        url : "/reviews",
+        data: JSON.stringify(data, null, '\t'),
+        contentType: 'application/json;charset=UTF-8',
+        success: function(result) {
+            // Not showing anything
+        }
+    });
+};
