@@ -30,23 +30,24 @@
           <h1 class="jumbotron-heading">Classified Reviews</h1>
           <p>#TODO: add some description here...{{selected_file}}</p>
           <div class="table-responsive">
-            <table class="table table-striped">
+            <table class="table table-striped" id="reviews_table">
               <thead class="header-bold thead-inverse">
               <tr>
                 <td class="col-md-1">#</td> <td class="col-md-7">REVIEW</td>
                 <td class="col-md-2">
                    <div class="col-md-3">
-                     <div class="button-group">
-                        <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
-                            Review Categories
-                        </button>
-                        <ul class="dropdown-menu" id="dropdown">
-                            {% for review_category in review_categories %}
-                                <li><a href="#" class="small" data-value="{{review_category[0]}}" id="{{review_category[0]}}" tabIndex="-1"><input type="checkbox"/>&nbsp;{{review_category[1]}}</a></li>
-                            {% endfor %}
-                        </ul>
+                       <div class="form-inline" id="myDropdown">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" >Please select <span class="caret"></span></button>
+                          <ul class="dropdown-menu" id="categories_dropdown">
+                              {% for review_category in review_categories %}
+                                <li>
+                                  <input type="checkbox" name="{{review_category[0]}}" data-value="{{review_category[0]}}" id="{{review_category[0]}}">
+                                  <label for="{{review_category[0]}}">{{review_category[1]}}</label>
+                                </li>
+                              {% endfor %}
+                          </ul>
+                        </div>
                     </div>
-                </div>
                 </td>
               </tr>
               </thead>
@@ -63,11 +64,6 @@
               </tbody>
           </table>
           </div>
-        <!--
-      <div class="row">
-        <button type="button" onclick="disableButtonState(this)" name="enable">Enable</button>
-      </div>
-      -->
       {% if paging_info.has_prev %}
         <a href="{{ url_for('classify_reviews', page=paging_info.prev) }}">&lt;&lt; Prev</a>{% else %}&lt;&lt; Prev
       {% endif %} |

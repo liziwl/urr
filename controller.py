@@ -29,6 +29,7 @@ def index():
 
 saved_data = {
     "data": pd.DataFrame(),
+    "all_data": pd.DataFrame(),
     "page": 0,
     "selected_file": ""
 }
@@ -57,6 +58,7 @@ def compute_new_data(selected_file):
     data = classify_and_save_results("./user_reviews_files/" + selected_file, "reviewText", build_categories_list())
     saved_data["selected_file"] = selected_file
     saved_data["data"] = data
+    saved_data["all_data"] = data
     return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)
 
 
@@ -77,6 +79,23 @@ def extract_filtering_categories(request):
     return None
 
 
+def reset_filtering(filtering_categories):
+    return filtering_categories == ["ALL"]
+
+
+def get_filtered_data(filtering_categories):
+    global saved_data
+    saved_data["page"] = 0
+    data = saved_data["all_data"]
+    if reset_filtering(filtering_categories):
+        saved_data["data"] = saved_data["all_data"]
+    else:
+        for category in filtering_categories:
+            data = data.loc[data["PREDICTED_" + category] != ""]
+        saved_data["data"] = data
+    return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)
+
+
 @app.route("/reviews", methods=["POST", "GET"])
 @app.route('/reviews/<int:page>', methods=["GET", "POST"])
 def classify_reviews(page=1):
@@ -85,6 +104,8 @@ def classify_reviews(page=1):
     print("Filtering categories: %s" % filtering_categories)
     if selected_file:
         data, paging_info = compute_new_data(selected_file)
+    elif filtering_categories:
+        data, paging_info = get_filtered_data(filtering_categories)
     else:
         data, paging_info = get_paged_data(page)
     return render_template("reviews.html", selected_file=selected_file, paging_info=paging_info,
