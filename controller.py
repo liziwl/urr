@@ -76,7 +76,7 @@ def get_paged_data(page):
 def extract_filtering_categories(request):
     if request and request.json and "filtering_categories" in request.json:
         return request.json["filtering_categories"]
-    return None
+    return []
 
 
 def reset_filtering(filtering_categories):
@@ -109,7 +109,7 @@ def classify_reviews(page=1):
     else:
         data, paging_info = get_paged_data(page)
     return render_template("reviews.html", selected_file=selected_file, paging_info=paging_info,
-                           data=data.itertuples(index=False), review_categories=build_pretty_categories_list())
+                           data=data.itertuples(index=False), review_categories=build_pretty_categories_list(filtering_categories))
 
 
 if __name__ == '__main__':

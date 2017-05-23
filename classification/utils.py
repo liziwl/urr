@@ -172,8 +172,13 @@ def build_categories_list():
     return ["IS_" + category for category in categories]
 
 
-def build_pretty_categories_list():
-    return zip(build_categories_list(), [category[3:].lower().title() for category in build_categories_list()])
+def build_pretty_categories_list(filtering_categories):
+    pretty_categories = zip(build_categories_list(),
+                            [category[3:].lower().title() for category in build_categories_list()])
+    for i in range(len(pretty_categories)):
+        pretty_categories[i] += ("checked",) if pretty_categories[i][0] in filtering_categories else ("", )
+
+    return pretty_categories
 
 
 def preprocess_category_name(category):

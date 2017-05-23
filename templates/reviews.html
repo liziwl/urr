@@ -41,7 +41,7 @@
                           <ul class="dropdown-menu" id="categories_dropdown">
                               {% for review_category in review_categories %}
                                 <li>
-                                  <input type="checkbox" name="{{review_category[0]}}" data-value="{{review_category[0]}}" id="{{review_category[0]}}">
+                                  <input type="checkbox" name="{{review_category[0]}}" data-value="{{review_category[0]}}" id="{{review_category[0]}}" {{review_category[2]}}>
                                   <label for="{{review_category[0]}}">{{review_category[1]}}</label>
                                 </li>
                               {% endfor %}
