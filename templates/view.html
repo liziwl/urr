@@ -21,6 +21,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
       <link rel="stylesheet" href="{{ url_for('static',filename='basic.css') }}" type="text/css">
+
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+      <link href="{{ url_for('static',filename='plugins/bootstrap-fileinput/fileinput.min.css') }}" media="all" rel="stylesheet" type="text/css" />
+      <script src="{{ url_for('static',filename='plugins/bootstrap-fileinput/fileinput.min.js') }}"></script>
+
   </head>
   <body>
 
@@ -46,26 +51,46 @@
     </nav>
 
     <div class="container my-container" style="padding-top: 100px;">
-        <div class="starter-template">
-        <h1>User Reviews Classification</h1>
-        <p class="lead">Blabla... some help descriptions</p>
+        <div class="row">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>User Reviews Classification</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+            <p class="lead">Blabla... some help descriptions</p>
+            </div>
+        </div>
         <br /> <br />
+        <div class="row">
         <form action="{{ url_for('classify_reviews') }}" method="post" class="form-horizontal">
             <div class="form-group">
-              <label class="control-label col-sm-4" for="file_choice">Select reviews file:</label>
-              <div class="col-sm-4">
+              <label class="control-label col-md-4" for="file_choice">Select reviews file:</label>
+              <div class="col-md-5">
                 <select id="file_choice" name="file_choice" class="form-control">
                     {% for file_choice in file_choices %}
                     <option>{{file_choice}}</option>
                     {% endfor %}
                 </select>
               </div>
-              <input type="submit" value="classify" class="btn btn-default col-sm-3">
+              <input type="submit" value="Classify" class="btn btn-success col-md-offset-1 col-md-2" style="margin-left: 40px;">
               <br/>
             </div>
         </form>
-      </div>
-
+        </div>
+        <div class="row">
+            <form action="{{ url_for('file_upload') }}" method=POST enctype=multipart/form-data>
+                <div class="form-group">
+                    <label class="control-label col-md-4" for="upload_button">Upload reviews file:</label>
+                    <div class="col-md-5">
+                        <input id="upload_button" type="file" class="btn btn-default form-control" name="file">
+                    </div>
+                    <input id="submit_button" type="submit" class="btn btn-success col-md-offset-1 col-md-2" value="Upload">
+                </div>
+            </form>
+        </div>
+        </div>
     {% if result != None %}
     <img src="{{ result }}" width="400">
     {% endif %}

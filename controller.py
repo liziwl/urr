@@ -1,5 +1,6 @@
 from model import InputForm
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
+from werkzeug import secure_filename
 from compute import compute
 from os import listdir
 from os.path import isfile, join
@@ -18,11 +19,6 @@ def find_files(files_path="./user_reviews_files/"):
 @app.route('/vib1', methods=['GET', 'POST'])
 def index():
     form = InputForm(request.form)
-    if request.method == 'POST' and form.validate():
-        result = compute(form.A.data, form.b.data,
-                         form.w.data, form.T.data)
-    else:
-        result = None
     file_choices = find_files()
     return render_template("view.html", form=form, file_choices=file_choices)
 
@@ -109,8 +105,25 @@ def classify_reviews(page=1):
     else:
         data, paging_info = get_paged_data(page)
     return render_template("reviews.html", selected_file=selected_file, paging_info=paging_info,
-                           data=data.itertuples(index=False), review_categories=build_pretty_categories_list(filtering_categories))
+                           data=data.itertuples(index=False), data_is_empty=data.empty, review_categories=build_pretty_categories_list(filtering_categories))
 
+def allowed_file(filename):
+    return True
+
+
+@app.route('/file_upload', methods=['GET', 'POST'])
+def file_upload():
+    form = InputForm(request.form)
+    print(">>>>>>>>>>>>>> Uploading file...")
+
+    if request.method == 'POST':
+        file = request.files['file']
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            file.save(os.path.join("/tmp/", filename))
+
+    file_choices = find_files()
+    return render_template("view.html", form=form, file_choices=file_choices)
 
 if __name__ == '__main__':
     app.run(debug=True)

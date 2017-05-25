@@ -9,6 +9,10 @@
     font-weight: bold;
 }
 
+.dropdown-menu {
+    top: 30px;
+}
+
 .icon-category {
     position: relative;
     top: 1px;

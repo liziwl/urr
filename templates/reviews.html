@@ -33,14 +33,14 @@
             <table class="table table-striped" id="reviews_table">
               <thead class="header-bold thead-inverse">
               <tr>
-                <td class="col-md-1">#</td> <td class="col-md-7">REVIEW</td>
+                <td class="col-md-1">{% if not data_is_empty %}#{% endif %}</td> <td class="col-md-7">{% if not data_is_empty %}REVIEW{% endif %}</td>
                 <td class="col-md-2">
                    <div class="col-md-3">
-                       <div class="form-inline" id="myDropdown">
-                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" >Please select <span class="caret"></span></button>
+                       <div class="form-group" id="myDropdown">
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" >Select Categories<span class="caret"></span></button>
                           <ul class="dropdown-menu" id="categories_dropdown">
                               {% for review_category in review_categories %}
-                                <li>
+                                <li style="padding-left: 10px;">
                                   <input type="checkbox" name="{{review_category[0]}}" data-value="{{review_category[0]}}" id="{{review_category[0]}}" {{review_category[2]}}>
                                   <label for="{{review_category[0]}}">{{review_category[1]}}</label>
                                 </li>
@@ -53,6 +53,7 @@
               </thead>
 
               <tbody>
+              {% if not data_is_empty %}
                 {% for row in data %}
                 <tr><td>#</td> <td>{{row.reviewText}}</td>
                   <td>{% for prediction in row.predictions %}
@@ -61,15 +62,24 @@
                     </td>
                 </tr>
                 {% endfor %}
+              {% else %}
+              <tr><td colspan="3" style="border-top:0px; background: white;">
+                  <div class="alert alert-warning">No reviews have been found that were classified as belonging to <strong>all</strong> the selected categories. Please
+                      try again using reduced set of categories.
+                  </div>
+              </td></tr>
+              {% endif %}
               </tbody>
           </table>
           </div>
-      {% if paging_info.has_prev %}
-        <a href="{{ url_for('classify_reviews', page=paging_info.prev) }}">&lt;&lt; Prev</a>{% else %}&lt;&lt; Prev
-      {% endif %} |
-      {% if paging_info.has_next %}
-        <a href="{{ url_for('classify_reviews', page=paging_info.next) }}">Next &gt;&gt;</a>{% else %}Next&gt;&gt;
-      {% endif %}
+          {% if not data_is_empty %}
+              {% if paging_info.has_prev %}
+                <a href="{{ url_for('classify_reviews', page=paging_info.prev) }}">&lt;&lt; Prev</a>{% else %}&lt;&lt; Prev
+              {% endif %} |
+              {% if paging_info.has_next %}
+                <a href="{{ url_for('classify_reviews', page=paging_info.next) }}">Next &gt;&gt;</a>{% else %}Next&gt;&gt;
+              {% endif %}
+          {% endif %}
       </div>
     <!--</div>-->
   </div><!-- /.container -->

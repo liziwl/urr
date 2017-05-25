@@ -27,7 +27,7 @@ var handle_filtering = function(filtering_categories) {
         success: function(result) {
             var newDoc = document.open("text/html", "replace");
             newDoc.write(result);
-            /*newDoc.close();*/
+            newDoc.close();
         }
     });
 };
