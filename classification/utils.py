@@ -42,6 +42,9 @@ ERROR = 'ERROR'
 
 OTHER = 'OTHER'
 
+REVIEW_FIELD = "reviewText"
+USER_REVIEWS_HOME = "user_reviews_files"
+
 cat_subcat_dict = {
     COMPATIBILITY: [DEVICE, ANDROID_VERSION, HARDWARE],
     USAGE: [APP_USABILITY, UI],
@@ -53,13 +56,17 @@ cat_subcat_dict = {
 
 
 def preprocess_review(review):
-    # remove punctuation
-    exclude = set(string.punctuation)
-    review = ''.join(ch for ch in review if ch not in exclude)
-    # remove stop words
-    filtered_words = [word for word in review.split(' ') if word not in stopwords.words('english')]
-    # apply stemming
-    return ' '.join([stemmer.stem(word) for word in filtered_words])
+    try:
+        # remove punctuation
+        exclude = set(string.punctuation)
+        review = ''.join(ch for ch in review if ch not in exclude)
+        # remove stop words
+        filtered_words = [word for word in review.split(' ') if word not in stopwords.words('english')]
+        # apply stemming
+        return ' '.join([stemmer.stem(word) for word in filtered_words])
+    except Exception as e:
+        print(e)
+        return ""
 
 
 def create_preprocessing_pipeline(text_data):

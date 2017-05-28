@@ -8,9 +8,9 @@ from classification.utils import *
 
 
 PAGE_COUNT = 20
-
 app = Flask(__name__)
 
+app.config['ALLOWED_EXTENSIONS'] = set(['csv'])
 
 def find_files(files_path="./user_reviews_files/"):
     return [f for f in listdir(files_path) if isfile(join(files_path, f))]
@@ -107,23 +107,33 @@ def classify_reviews(page=1):
     return render_template("reviews.html", selected_file=selected_file, paging_info=paging_info,
                            data=data.itertuples(index=False), data_is_empty=data.empty, review_categories=build_pretty_categories_list(filtering_categories))
 
+
 def allowed_file(filename):
-    return True
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1] in app.config['ALLOWED_EXTENSIONS']
 
 
 @app.route('/file_upload', methods=['GET', 'POST'])
 def file_upload():
     form = InputForm(request.form)
-    print(">>>>>>>>>>>>>> Uploading file...")
-
+    error_msg = None
     if request.method == 'POST':
         file = request.files['file']
-        if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
-            file.save(os.path.join("/tmp/", filename))
-
+        if file:
+            if allowed_file(file.filename):
+                filename = secure_filename(file.filename)
+                temp_file = os.path.join("/tmp/", filename)
+                file.save(temp_file)
+                data = pd.read_csv(temp_file, encoding="ISO-8859-1")
+                if REVIEW_FIELD not in data.columns:
+                    error_msg = "File %s does not have a %s column" % (filename, REVIEW_FIELD)
+                else:
+                    data.to_csv(os.path.join(".", USER_REVIEWS_HOME, filename), encoding="ISO-8859-1", index=False)
+            else:
+                error_msg = "The input file for the reviews should be a CSV file."
     file_choices = find_files()
-    return render_template("view.html", form=form, file_choices=file_choices)
+    return render_template("view.html", form=form, file_choices=file_choices,
+                           invalid_file_error_msg=error_msg)
 
 if __name__ == '__main__':
     app.run(debug=True)

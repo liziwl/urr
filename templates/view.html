@@ -74,7 +74,7 @@
                     {% endfor %}
                 </select>
               </div>
-              <input type="submit" value="Classify" class="btn btn-success col-md-offset-1 col-md-2" style="margin-left: 40px;">
+              <input type="submit" value="Classify" class="btn btn-success col-md-offset-1 col-md-2" style="margin-left: 46px;">
               <br/>
             </div>
         </form>
@@ -82,12 +82,21 @@
         <div class="row">
             <form action="{{ url_for('file_upload') }}" method=POST enctype=multipart/form-data>
                 <div class="form-group">
+                    <div class="row">
                     <label class="control-label col-md-4" for="upload_button">Upload reviews file:</label>
                     <div class="col-md-5">
                         <input id="upload_button" type="file" class="btn btn-default form-control" name="file">
                     </div>
                     <input id="submit_button" type="submit" class="btn btn-success col-md-offset-1 col-md-2" value="Upload">
+                    </div>
                 </div>
+                {% if invalid_file_error_msg %}
+                <div class="row">
+                    <div class="alert alert-danger">
+                        {{invalid_file_error_msg}}
+                    </div>
+                </div>
+                {% endif %}
             </form>
         </div>
         </div>
