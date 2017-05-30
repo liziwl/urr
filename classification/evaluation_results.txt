@@ -1,0 +1,1749 @@
+>>>>> Evaluating XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
+       gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
+       min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
+       objective='binary:logistic', reg_alpha=0, reg_lambda=1,
+       scale_pos_weight=1, seed=0, silent=True, subsample=1)
+>>>>> Preprocessing: 17.72 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Fitting the classifier: 6.09 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       0.99      0.95      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.02 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       0.99      0.92      0.96        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 6.34 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       0.99      0.91      0.95        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 6.21 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.93      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 6.24 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.93      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+FINAL REPORT FOR <class 'xgboost.sklearn.XGBClassifier'>
+
+For category: IS_SECURITY
+Results: {'f1_score': 0.99432765298727421, 'recall': 0.99440785698871248, 'precision': 0.99440785698871248}>>>>> Evaluating GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_split=1e-07, min_samples_leaf=1,
+              min_samples_split=2, min_weight_fraction_leaf=0.0,
+              n_estimators=50, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)
+>>>>> Preprocessing: 17.39 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Fitting the classifier: 23.63 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.88      0.94        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.70 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       0.99      0.95      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.65 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       0.99      0.97      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.51 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.97      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.69 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.92      0.96        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+
+
+FINAL REPORT FOR <class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>
+
+For category: IS_SECURITY
+Results: {'f1_score': 0.99496306973808513, 'recall': 0.99506904645172245, 'precision': 0.99506904645172245}>>>>> Evaluating XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
+       gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
+       min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
+       objective='binary:logistic', reg_alpha=0, reg_lambda=1,
+       scale_pos_weight=1, seed=0, silent=True, subsample=1)
+>>>>> Preprocessing: 17.76 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Evaluating XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
+       gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
+       min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
+       objective='binary:logistic', reg_alpha=0, reg_lambda=1,
+       scale_pos_weight=1, seed=0, silent=True, subsample=1)
+>>>>> Preprocessing: 17.28 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Fitting the classifier: 5.70 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       0.98      0.93      0.96        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.61 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.96      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.66 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       0.99      0.92      0.96        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.78 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.96      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.14 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       0.99      0.97      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+FINAL REPORT FOR <class 'xgboost.sklearn.XGBClassifier'>
+
+For category: IS_SECURITY
+Results: {'f1_score': 0.99548143666591571, 'recall': 0.99551577313697148, 'precision': 0.99551577313697148}>>>>> Evaluating GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_split=1e-07, min_samples_leaf=1,
+              min_samples_split=2, min_weight_fraction_leaf=0.0,
+              n_estimators=50, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)
+>>>>> Preprocessing: 17.74 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Fitting the classifier: 23.88 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.93      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.80 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.93      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.71 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       0.99      0.98      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.63 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.95      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.42 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.98      0.99        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+FINAL REPORT FOR <class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>
+
+For category: IS_SECURITY
+Results: {'f1_score': 0.9964455030514241, 'recall': 0.99650076760123585, 'precision': 0.99650076760123585}>>>>> Evaluating XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
+       gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
+       min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
+       objective='binary:logistic', reg_alpha=0, reg_lambda=1,
+       scale_pos_weight=1, seed=0, silent=True, subsample=1)
+>>>>> Preprocessing: 16.82 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Fitting the classifier: 5.54 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.92      0.96        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.54 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.90      0.95        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.49 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.95      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.57 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       0.99      0.93      0.96        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.75 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.96      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_PRIVACY
+>>>>> Fitting the classifier: 5.82 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      0.92      0.96        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.72 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      1.00      1.00        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.77 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      0.80      0.89        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.77 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      0.88      0.94        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.76 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      0.92      0.96        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_LICENSING
+>>>>> Fitting the classifier: 5.87 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1216
+          1       0.94      0.78      0.85        37
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.93 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1216
+          1       0.97      0.81      0.88        37
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.75 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       0.92      0.92      0.92        37
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.92 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       0.97      0.84      0.90        37
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.81 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       0.90      0.97      0.94        37
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_PRICE
+>>>>> Fitting the classifier: 6.04 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       1.00      0.91      0.95        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.02 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       1.00      0.87      0.93        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.51 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       1.00      0.89      0.94        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.66 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       1.00      0.89      0.94        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.67 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       1.00      0.91      0.95        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_ERROR
+>>>>> Fitting the classifier: 6.71 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.93      1.00      0.96       964
+          1       0.99      0.73      0.84       289
+
+avg / total       0.94      0.94      0.93      1253
+precision: 0.94 recall: 0.94 f1_score: 0.93
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.50 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.93      0.99      0.96       964
+          1       0.95      0.73      0.83       289
+
+avg / total       0.93      0.93      0.93      1253
+precision: 0.93 recall: 0.93 f1_score: 0.93
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.61 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.93      0.98      0.96       964
+          1       0.93      0.77      0.84       289
+
+avg / total       0.93      0.93      0.93      1253
+precision: 0.93 recall: 0.93 f1_score: 0.93
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.86 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.93      0.99      0.96       964
+          1       0.97      0.76      0.85       289
+
+avg / total       0.94      0.94      0.94      1253
+precision: 0.94 recall: 0.94 f1_score: 0.94
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.11 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.92      1.00      0.96       964
+          1       0.98      0.71      0.82       289
+
+avg / total       0.93      0.93      0.92      1253
+precision: 0.93 recall: 0.93 f1_score: 0.92
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_APP USABILITY
+>>>>> Fitting the classifier: 7.07 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1138
+          1       0.98      0.81      0.89       115
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.19 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1138
+          1       0.97      0.85      0.91       115
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.92 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1138
+          1       0.98      0.81      0.89       115
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.93 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1138
+          1       0.96      0.77      0.86       115
+
+avg / total       0.98      0.98      0.97      1253
+precision: 0.98 recall: 0.98 f1_score: 0.97
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.97 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1138
+          1       0.99      0.78      0.87       115
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_UI
+>>>>> Fitting the classifier: 7.15 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.96      1.00      0.98       943
+          1       1.00      0.88      0.94       310
+
+avg / total       0.97      0.97      0.97      1253
+precision: 0.97 recall: 0.97 f1_score: 0.97
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.87 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99       943
+          1       1.00      0.93      0.96       310
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.00 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.96      1.00      0.98       943
+          1       1.00      0.88      0.93       310
+
+avg / total       0.97      0.97      0.97      1253
+precision: 0.97 recall: 0.97 f1_score: 0.97
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.52 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.96      1.00      0.98       943
+          1       1.00      0.88      0.93       310
+
+avg / total       0.97      0.97      0.97      1253
+precision: 0.97 recall: 0.97 f1_score: 0.97
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.47 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.96      1.00      0.98       943
+          1       1.00      0.89      0.94       310
+
+avg / total       0.97      0.97      0.97      1253
+precision: 0.97 recall: 0.97 f1_score: 0.97
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_DEVICE
+>>>>> Fitting the classifier: 7.05 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1179
+          1       1.00      0.95      0.97        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.18 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1179
+          1       1.00      0.77      0.87        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.85 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.89      0.94        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.87 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.85      0.92        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.88 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1179
+          1       1.00      0.96      0.98        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_ANDROID VERSION
+>>>>> Fitting the classifier: 6.86 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1216
+          1       0.91      0.57      0.70        37
+
+avg / total       0.98      0.99      0.98      1253
+precision: 0.98 recall: 0.99 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.87 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1216
+          1       0.94      0.46      0.62        37
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.87 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1216
+          1       1.00      0.57      0.72        37
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.88 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1216
+          1       0.92      0.59      0.72        37
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.86 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1216
+          1       1.00      0.46      0.63        37
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_HARDWARE
+>>>>> Fitting the classifier: 6.90 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      0.85      0.92        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.87 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1212
+          1       1.00      0.83      0.91        41
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.86 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      0.98      0.99        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.86 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      0.95      0.97        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.89 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      0.90      0.95        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_PERFORMANCE
+>>>>> Fitting the classifier: 6.87 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1179
+          1       1.00      0.93      0.97        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.17 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.89      0.94        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.35 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.86      0.93        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 7.41 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1179
+          1       1.00      0.82      0.90        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.94 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1179
+          1       1.00      0.81      0.90        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_BATTERY
+>>>>> Fitting the classifier: 4.62 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      0.93      0.96        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.18 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      1.00      1.00        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.15 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      1.00      1.00        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 4.77 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      0.93      0.96        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.07 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      0.93      0.96        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_MEMORY
+>>>>> Fitting the classifier: 6.80 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      1.00      1.00        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.50 seconds
+>>>>> Prediction: 0.06 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      1.00      1.00        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.78 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      0.94      0.97        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.58 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      1.00      1.00        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 6.74 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      1.00      1.00        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+
+
+FINAL REPORT FOR <class 'xgboost.sklearn.XGBClassifier'>
+
+For category: IS_LICENSING
+Results: {'f1_score': 0.99410628959847325, 'recall': 0.99419933781498082, 'precision': 0.99419933781498082}For category: IS_APP USABILITY
+Results: {'f1_score': 0.97933192113479706, 'recall': 0.98012898053223263, 'precision': 0.98012898053223263}For category: IS_ERROR
+Results: {'f1_score': 0.9303475778745941, 'recall': 0.93576653377564301, 'precision': 0.93576653377564301}For category: IS_PRICE
+Results: {'f1_score': 0.99606479059461728, 'recall': 0.99618473376713845, 'precision': 0.99618473376713845}For category: IS_PERFORMANCE
+Results: {'f1_score': 0.99171289895255088, 'recall': 0.99209340890952702, 'precision': 0.99209340890952702}For category: IS_ANDROID VERSION
+Results: {'f1_score': 0.98321829330475607, 'recall': 0.98496785448054724, 'precision': 0.98496785448054724}For category: IS_UI
+Results: {'f1_score': 0.97230076956136313, 'recall': 0.9738336647790895, 'precision': 0.9738336647790895}For category: IS_BATTERY
+Results: {'f1_score': 0.99951237821662231, 'recall': 0.9995215354117859, 'precision': 0.9995215354117859}For category: IS_HARDWARE
+Results: {'f1_score': 0.99669985081106716, 'recall': 0.99682155318801247, 'precision': 0.99682155318801247}For category: IS_SECURITY
+Results: {'f1_score': 0.99480643842139393, 'recall': 0.9949105531167689, 'precision': 0.9949105531167689}For category: IS_MEMORY
+Results: {'f1_score': 0.9998379969143546, 'recall': 0.99984051211611136, 'precision': 0.99984051211611136}For category: IS_PRIVACY
+Results: {'f1_score': 0.99801303763697058, 'recall': 0.99809003845880395, 'precision': 0.99809003845880395}For category: IS_DEVICE
+Results: {'f1_score': 0.99285640501747352, 'recall': 0.99320325236344398, 'precision': 0.99320325236344398}>>>>> Evaluating GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_split=1e-07, min_samples_leaf=1,
+              min_samples_split=2, min_weight_fraction_leaf=0.0,
+              n_estimators=50, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)
+>>>>> Preprocessing: 18.52 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Fitting the classifier: 24.32 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.96      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.44 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.93      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.99 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.93      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.18 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       1.00      0.98      0.99        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.27 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1161
+          1       0.99      0.98      0.98        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_PRIVACY
+>>>>> Fitting the classifier: 23.76 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      0.92      0.96        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.60 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       0.96      0.88      0.92        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.69 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      0.96      0.98        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.48 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       0.96      0.92      0.94        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.71 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1228
+          1       1.00      0.84      0.91        25
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_LICENSING
+>>>>> Fitting the classifier: 23.19 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       0.88      0.97      0.92        37
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.60 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       1.00      0.89      0.94        37
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.43 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       0.88      1.00      0.94        37
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.71 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       0.93      1.00      0.96        37
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.49 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1216
+          1       0.97      0.95      0.96        37
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_PRICE
+>>>>> Fitting the classifier: 23.17 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       0.94      0.96      0.95        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.26 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       0.93      0.91      0.92        46
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.28 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       1.00      0.98      0.99        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.14 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       0.96      0.96      0.96        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.31 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1207
+          1       0.96      0.93      0.95        46
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_ERROR
+>>>>> Fitting the classifier: 23.96 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.89      1.00      0.94       964
+          1       0.98      0.60      0.74       289
+
+avg / total       0.91      0.90      0.90      1253
+precision: 0.91 recall: 0.90 f1_score: 0.90
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.19 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.90      1.00      0.95       964
+          1       0.99      0.62      0.77       289
+
+avg / total       0.92      0.91      0.90      1253
+precision: 0.92 recall: 0.91 f1_score: 0.90
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.10 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.89      1.00      0.94       964
+          1       0.98      0.58      0.73       289
+
+avg / total       0.91      0.90      0.89      1253
+precision: 0.91 recall: 0.90 f1_score: 0.89
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.13 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.90      1.00      0.95       964
+          1       1.00      0.62      0.76       289
+
+avg / total       0.92      0.91      0.90      1253
+precision: 0.92 recall: 0.91 f1_score: 0.90
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.97 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.90      1.00      0.94       964
+          1       1.00      0.61      0.76       289
+
+avg / total       0.92      0.91      0.90      1253
+precision: 0.92 recall: 0.91 f1_score: 0.90
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_APP USABILITY
+>>>>> Fitting the classifier: 24.24 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1138
+          1       0.96      0.77      0.85       115
+
+avg / total       0.97      0.98      0.97      1253
+precision: 0.97 recall: 0.98 f1_score: 0.97
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.13 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      0.99      0.99      1138
+          1       0.93      0.83      0.88       115
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 24.40 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1138
+          1       0.97      0.77      0.86       115
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.53 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      0.99      0.99      1138
+          1       0.92      0.78      0.85       115
+
+avg / total       0.97      0.97      0.97      1253
+precision: 0.97 recall: 0.97 f1_score: 0.97
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.79 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99      1138
+          1       0.96      0.79      0.87       115
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_UI
+>>>>> Fitting the classifier: 23.92 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.93      1.00      0.96       943
+          1       1.00      0.77      0.87       310
+
+avg / total       0.95      0.94      0.94      1253
+precision: 0.95 recall: 0.94 f1_score: 0.94
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.15 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.92      1.00      0.96       943
+          1       1.00      0.75      0.85       310
+
+avg / total       0.94      0.94      0.93      1253
+precision: 0.94 recall: 0.94 f1_score: 0.93
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.05 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.91      1.00      0.95       943
+          1       1.00      0.70      0.83       310
+
+avg / total       0.93      0.93      0.92      1253
+precision: 0.93 recall: 0.93 f1_score: 0.92
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 24.14 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.94      1.00      0.97       943
+          1       1.00      0.79      0.88       310
+
+avg / total       0.95      0.95      0.95      1253
+precision: 0.95 recall: 0.95 f1_score: 0.95
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.86 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.94      1.00      0.97       943
+          1       1.00      0.81      0.89       310
+
+avg / total       0.96      0.95      0.95      1253
+precision: 0.96 recall: 0.95 f1_score: 0.95
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_DEVICE
+>>>>> Fitting the classifier: 23.63 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.92      0.96        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.80 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1179
+          1       1.00      0.95      0.97        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.82 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1179
+          1       1.00      0.95      0.97        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.92 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.91      0.95        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 24.03 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1179
+          1       1.00      0.96      0.98        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_ANDROID VERSION
+>>>>> Fitting the classifier: 24.25 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1216
+          1       0.88      0.57      0.69        37
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.79 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      0.99      0.99      1216
+          1       0.78      0.68      0.72        37
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.54 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1216
+          1       0.88      0.57      0.69        37
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.48 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1216
+          1       0.95      0.54      0.69        37
+
+avg / total       0.99      0.99      0.98      1253
+precision: 0.99 recall: 0.99 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 23.59 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      0.99      0.99      1216
+          1       0.71      0.68      0.69        37
+
+avg / total       0.98      0.98      0.98      1253
+precision: 0.98 recall: 0.98 f1_score: 0.98
+>>>>> One evaluation loop: 0.01 seconds
+
+
+>>>>> For category: IS_HARDWARE
+>>>>> Fitting the classifier: 23.21 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      0.98      0.99        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.11 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      1.00      1.00        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.18 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      1.00      1.00        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.22 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      0.98      0.99        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.24 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1212
+          1       1.00      0.98      0.99        41
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_PERFORMANCE
+>>>>> Fitting the classifier: 23.70 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.92      0.96        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.76 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1179
+          1       0.97      0.85      0.91        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.33 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.88      0.94        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.97 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.92      0.96        74
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 23.35 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1179
+          1       1.00      0.91      0.95        74
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_BATTERY
+>>>>> Fitting the classifier: 9.50 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      1.00      1.00        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.32 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      0.93      0.96        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.38 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      0.93      0.96        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.34 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      0.93      0.96        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 9.32 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1239
+          1       1.00      1.00      1.00        14
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+>>>>> For category: IS_MEMORY
+>>>>> Fitting the classifier: 21.13 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      0.94      0.97        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 22.66 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      1.00      1.00        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 21.17 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      0.94      0.97        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 19.41 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      0.94      0.97        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 22.60 seconds
+>>>>> Prediction: 0.02 seconds
+             precision    recall  f1-score   support
+
+          0       1.00      1.00      1.00      1236
+          1       1.00      1.00      1.00        17
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+
+
+FINAL REPORT FOR <class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>
+
+For category: IS_LICENSING
+Results: {'f1_score': 0.99668437943350519, 'recall': 0.99685422553949687, 'precision': 0.99685422553949687}For category: IS_APP USABILITY
+Results: {'f1_score': 0.97539166125104459, 'recall': 0.975927582342489, 'precision': 0.975927582342489}For category: IS_ERROR
+Results: {'f1_score': 0.89952148258529419, 'recall': 0.91667958285012552, 'precision': 0.91667958285012552}For category: IS_PRICE
+Results: {'f1_score': 0.99648158158111499, 'recall': 0.99648167323509751, 'precision': 0.99648167323509751}For category: IS_PERFORMANCE
+Results: {'f1_score': 0.99328458144000797, 'recall': 0.99345198194955509, 'precision': 0.99345198194955509}For category: IS_ANDROID VERSION
+Results: {'f1_score': 0.98334596576541389, 'recall': 0.98371125729362086, 'precision': 0.98371125729362086}For category: IS_UI
+Results: {'f1_score': 0.938836591780837, 'recall': 0.94601549385812578, 'precision': 0.94601549385812578}For category: IS_BATTERY
+Results: {'f1_score': 0.99951237821662231, 'recall': 0.99952153541178568, 'precision': 0.99952153541178568}For category: IS_HARDWARE
+Results: {'f1_score': 0.99951829210505705, 'recall': 0.99952154400748994, 'precision': 0.99952154400748994}For category: IS_SECURITY
+Results: {'f1_score': 0.99660886388389858, 'recall': 0.99665915436616037, 'precision': 0.99665915436616037}For category: IS_MEMORY
+Results: {'f1_score': 0.99951399074306357, 'recall': 0.99952153634833396, 'precision': 0.99952153634833396}For category: IS_PRIVACY
+Results: {'f1_score': 0.99771217520706723, 'recall': 0.99774859296326146, 'precision': 0.99774859296326146}For category: IS_DEVICE
+Results: {'f1_score': 0.99610279145908787, 'recall': 0.99618617065904813, 'precision': 0.99618617065904813}>>>>> Evaluating XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
+       gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
+       min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
+       objective='binary:logistic', reg_alpha=0, reg_lambda=1,
+       scale_pos_weight=1, seed=0, silent=True, subsample=1)
+>>>>> Evaluating XGBClassifier(base_score=0.5, colsample_bylevel=1, colsample_bytree=1,
+       gamma=0, learning_rate=0.1, max_delta_step=0, max_depth=3,
+       min_child_weight=1, missing=None, n_estimators=100, nthread=-1,
+       objective='binary:logistic', reg_alpha=0, reg_lambda=1,
+       scale_pos_weight=1, seed=0, silent=True, subsample=1)
+>>>>> Preprocessing: 18.13 seconds
+
+
+>>>>> For category: IS_SECURITY
+>>>>> Fitting the classifier: 5.89 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1161
+          1       1.00      0.87      0.93        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.01 seconds
+>>>>> Fitting the classifier: 5.63 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       0.99      0.93      0.96        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 5.78 seconds
+>>>>> Prediction: 0.05 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.93      0.97        92
+
+avg / total       1.00      1.00      1.00      1253
+precision: 1.00 recall: 1.00 f1_score: 1.00
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 6.68 seconds
+>>>>> Prediction: 0.04 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      1.00      1161
+          1       1.00      0.91      0.95        92
+
+avg / total       0.99      0.99      0.99      1253
+precision: 0.99 recall: 0.99 f1_score: 0.99
+>>>>> One evaluation loop: 0.00 seconds

@@ -4,13 +4,15 @@ from werkzeug import secure_filename
 from compute import compute
 from os import listdir
 from os.path import isfile, join
-from classification.utils import *
+from classification.classification_utils import *
+from utils import *
 
 
 PAGE_COUNT = 20
 app = Flask(__name__)
 
 app.config['ALLOWED_EXTENSIONS'] = set(['csv'])
+
 
 def find_files(files_path="./user_reviews_files/"):
     return [f for f in listdir(files_path) if isfile(join(files_path, f))]
@@ -49,13 +51,34 @@ def build_paging_info(data, page=0):
     }
 
 
-def compute_new_data(selected_file):
+def compute_classified_reviews_data(selected_file):
     global saved_data
     data = classify_and_save_results("./user_reviews_files/" + selected_file, "reviewText", build_categories_list())
     saved_data["selected_file"] = selected_file
     saved_data["data"] = data
     saved_data["all_data"] = data
     return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)
+
+
+def compute_analysis_data(data, categories, neg_category="IS_ERROR"):
+    categories.remove(neg_category)
+    analysis_data = {}
+    for category in categories:
+        category_data = data.loc[data["PREDICTED_" + category] != ""]
+        neg_category_data = category_data.loc[category_data["PREDICTED_" + neg_category] != ""]
+        neg_len = len(neg_category_data)
+        pos_len = len(category_data) - neg_len
+        total = neg_len + pos_len
+        neg_percent = 100.0 * neg_len / total if total != 0 else 0
+        pos_percent = 100.0 * pos_len / total if total != 0 else 0
+        analysis_data[category] = (round_nr(pos_percent), round_nr(neg_percent))
+    return analysis_data
+
+
+def generate_analysis_data(selected_file):
+    global saved_data
+    compute_classified_reviews_data(selected_file)
+    return compute_analysis_data(saved_data["all_data"], build_categories_list(), "IS_ERROR")
 
 
 def get_paged_data(page):
@@ -96,16 +119,23 @@ def get_filtered_data(filtering_categories):
 @app.route('/reviews/<int:page>', methods=["GET", "POST"])
 def classify_reviews(page=1):
     selected_file = request.form.get("file_choice", None)
+    action = request.form.get("action", None)
     filtering_categories = extract_filtering_categories(request)
     print("Filtering categories: %s" % filtering_categories)
-    if selected_file:
-        data, paging_info = compute_new_data(selected_file)
+    if selected_file and action == "Classify":
+        data, paging_info = compute_classified_reviews_data(selected_file)
+    elif selected_file and action == "Analyze":
+        analysis_data = generate_analysis_data(selected_file)
+        return render_template("analysis.html", selected_file=selected_file,
+                               analysis_data=analysis_data, data_is_empty=not bool(analysis_data),
+                               review_categories=build_pretty_categories_list(filtering_categories))
     elif filtering_categories:
         data, paging_info = get_filtered_data(filtering_categories)
     else:
         data, paging_info = get_paged_data(page)
     return render_template("reviews.html", selected_file=selected_file, paging_info=paging_info,
-                           data=data.itertuples(index=False), data_is_empty=data.empty, review_categories=build_pretty_categories_list(filtering_categories))
+                           data=data.itertuples(index=False), data_is_empty=data.empty,
+                           review_categories=build_pretty_categories_list(filtering_categories))
 
 
 def allowed_file(filename):

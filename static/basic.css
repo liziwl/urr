@@ -115,3 +115,24 @@
     width: 128px;
     height: 128px;
 }
+
+.custom-button-width {
+	width:150px;
+}
+
+.custom-large-button-width {
+	width:150px;
+}
+
+
+.cat-neg {
+    background-color: #d9534f;
+    color: white;
+    height: 30px;
+}
+
+.cat-pos {
+    background-color: #5cb85c;
+    color: white;
+    height: 30px;
+}
