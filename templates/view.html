@@ -74,9 +74,9 @@
                         {% endfor %}
                     </select>
                   </div>
-                <div class="col-md-4 text-right">
-                  <input type="submit" name="action" value="Classify" class="btn btn-success custom-button-width">
-                  <input type="submit" name="action" value="Analyze" class="btn btn-success custom-button-width">
+                <div class="col-md-4 btn-group" style="padding-left: 40px;">
+                  <input type="submit" name="action" value="Classify" class="btn btn-success">
+                  <input type="submit" name="action" value="Analyze" class="btn btn-success">
                 </div>
             </div>
         </form>
@@ -93,6 +93,7 @@
                             <input id="submit_button" type="submit" class="btn btn-success custom-button-width" value="Upload">
                         </div>
                     </div>
+
                 {% if invalid_file_error_msg %}
                 <div class="row">
                     <div class="alert alert-danger">
@@ -100,6 +101,7 @@
                     </div>
                 </div>
                 {% endif %}
+                </div>
             </form>
         </div>
         </div>
