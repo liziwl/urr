@@ -61,9 +61,10 @@ def compute_classified_reviews_data(selected_file):
 
 
 def compute_analysis_data(data, categories, neg_category="IS_ERROR"):
-    categories.remove(neg_category)
     analysis_data = {}
-    for category in categories:
+    for category, pretty_category in categories:
+        if category == neg_category:
+            continue
         category_data = data.loc[data["PREDICTED_" + category] != ""]
         neg_category_data = category_data.loc[category_data["PREDICTED_" + neg_category] != ""]
         neg_len = len(neg_category_data)
@@ -71,14 +72,14 @@ def compute_analysis_data(data, categories, neg_category="IS_ERROR"):
         total = neg_len + pos_len
         neg_percent = 100.0 * neg_len / total if total != 0 else 0
         pos_percent = 100.0 * pos_len / total if total != 0 else 0
-        analysis_data[category] = (round_nr(pos_percent), round_nr(neg_percent))
+        analysis_data[pretty_category] = (round_nr(pos_percent), round_nr(neg_percent), pos_len, neg_len)
     return analysis_data
 
 
 def generate_analysis_data(selected_file):
     global saved_data
     compute_classified_reviews_data(selected_file)
-    return compute_analysis_data(saved_data["all_data"], build_categories_list(), "IS_ERROR")
+    return compute_analysis_data(saved_data["all_data"], build_pretty_categories_list(), "IS_ERROR")
 
 
 def get_paged_data(page):
@@ -128,14 +129,14 @@ def classify_reviews(page=1):
         analysis_data = generate_analysis_data(selected_file)
         return render_template("analysis.html", selected_file=selected_file,
                                analysis_data=analysis_data, data_is_empty=not bool(analysis_data),
-                               review_categories=build_pretty_categories_list(filtering_categories))
+                               review_categories=build_pretty_categories_list_with_checked(filtering_categories))
     elif filtering_categories:
         data, paging_info = get_filtered_data(filtering_categories)
     else:
         data, paging_info = get_paged_data(page)
     return render_template("reviews.html", selected_file=selected_file, paging_info=paging_info,
                            data=data.itertuples(index=False), data_is_empty=data.empty,
-                           review_categories=build_pretty_categories_list(filtering_categories))
+                           review_categories=build_pretty_categories_list_with_checked(filtering_categories))
 
 
 def allowed_file(filename):
@@ -164,6 +165,7 @@ def file_upload():
     file_choices = find_files()
     return render_template("view.html", form=form, file_choices=file_choices,
                            invalid_file_error_msg=error_msg)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
