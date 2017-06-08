@@ -6,6 +6,8 @@ from os import listdir
 from os.path import isfile, join
 from classification.classification_utils import *
 from utils import *
+from flask import abort, redirect, url_for
+from flask import json
 
 
 PAGE_COUNT = 20
@@ -116,6 +118,15 @@ def get_filtered_data(filtering_categories):
     return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)
 
 
+@app.route("/analysis", methods=["POST", "GET"])
+def analyze_reviews():
+    selected_file = request.args["selected_file"]
+    analysis_data = generate_analysis_data(selected_file)
+    return render_template("analysis.html", selected_file=selected_file, analysis_data=analysis_data,
+                           data_is_empty=not bool(analysis_data),
+                           review_categories=build_pretty_categories_list_with_checked([]))
+
+
 @app.route("/reviews", methods=["POST", "GET"])
 @app.route('/reviews/<int:page>', methods=["GET", "POST"])
 def classify_reviews(page=1):
@@ -126,10 +137,7 @@ def classify_reviews(page=1):
     if selected_file and action == "Classify":
         data, paging_info = compute_classified_reviews_data(selected_file)
     elif selected_file and action == "Analyze":
-        analysis_data = generate_analysis_data(selected_file)
-        return render_template("analysis.html", selected_file=selected_file,
-                               analysis_data=analysis_data, data_is_empty=not bool(analysis_data),
-                               review_categories=build_pretty_categories_list_with_checked(filtering_categories))
+        return redirect(url_for("analyze_reviews", selected_file=selected_file))
     elif filtering_categories:
         data, paging_info = get_filtered_data(filtering_categories)
     else:
@@ -155,7 +163,7 @@ def file_upload():
                 filename = secure_filename(file.filename)
                 temp_file = os.path.join("/tmp/", filename)
                 file.save(temp_file)
-                data = pd.read_csv(temp_file, encoding="ISO-8859-1")
+                data = pd.read_csv(temp_file, encoding="ISO-8859-1", error_bad_lines=False)
                 if REVIEW_FIELD not in data.columns:
                     error_msg = "File %s does not have a %s column" % (filename, REVIEW_FIELD)
                 else:

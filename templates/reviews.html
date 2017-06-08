@@ -33,7 +33,7 @@
             <table class="table table-striped" id="reviews_table">
               <thead class="header-bold thead-inverse">
               <tr>
-                <td class="col-md-1">{% if not data_is_empty %}#{% endif %}</td> <td class="col-md-7">{% if not data_is_empty %}REVIEW{% endif %}</td>
+                <td class="col-md-1">{% if not data_is_empty %}Rating{% endif %}</td> <td class="col-md-7">{% if not data_is_empty %}REVIEW{% endif %}</td>
                 <td class="col-md-2">
                    <div class="col-md-3">
                        <div class="form-group" id="myDropdown">
@@ -55,7 +55,7 @@
               <tbody>
               {% if not data_is_empty %}
                 {% for row in data %}
-                <tr><td>#</td> <td>{{row.reviewText}}</td>
+                <tr><td>{{row.ratingStars}}</td> <td>{{row.reviewText}}</td>
                   <td>{% for prediction in row.predictions %}
                     <span class="icon-category icon-{{prediction}} small" data-toggle="tooltip" title="{{prediction}}"></span>
                     {% endfor %}
