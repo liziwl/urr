@@ -54,6 +54,22 @@ cat_subcat_dict = {
     ERROR: [ERROR],
 }
 
+categories_definitions = {
+    DEVICE: "mentions a specific mobile phone device (i.e Galaxy 6)",
+    ANDROID_VERSION: "references the OS version (i.e. Marshmallow)",
+    HARDWARE: "talks about a specific hardware component",
+    APP_USABILITY: "talks about ease or difficulty in using a feature",
+    UI: "mentions an UI element (i.e. button, menu item)",
+    PERFORMANCE: "talks about the performance of the app (i.e. slow, fast)",
+    BATTERY: "references related to the battery (i.e. drains the battery)",
+    MEMORY: "mentions issues related to the memory (i.e. out of memory)",
+    LICENSING: "references the licensing model of the app (i.e. free, pro version)",
+    PRICE: "talks about money aspects (i.e. donated $5)",
+    SECURITY: "talks about the security/lack of it",
+    PRIVACY: "issues related to permissions and user data",
+    ERROR: "the users reports or complains about an issue with the app"
+}
+
 
 def preprocess_review(review):
     try:
@@ -202,6 +218,17 @@ def build_categories_list():
 
 def build_pretty_categories_list():
     return zip(build_categories_list(), [category[3:].lower().title() for category in build_categories_list()])
+
+
+def build_pretty_categories_list_with_definitions():
+    pretty_categories_definitions = []
+    for category in build_categories_list():
+        category = category[3:]
+        pretty_categories_definitions.append((category.lower().title(), categories_definitions[category],
+                                              category.lower().replace(" ", "_")))
+    return pretty_categories_definitions
+
+print(build_pretty_categories_list_with_definitions())
 
 
 def build_pretty_categories_list_with_checked(filtering_categories):

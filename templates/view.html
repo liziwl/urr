@@ -50,65 +50,87 @@
       </div>
     </nav>
 
-    <div class="container my-container" style="padding-top: 100px;">
+    <div class="container" style="padding-top: 100px;">
         <div class="row">
-        <div class="row">
-            <div class="col-md-12">
-                <h1>User Reviews Classification</h1>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-            <p class="lead">Blabla... some help descriptions</p>
-            </div>
-        </div>
-        <br /> <br />
-        <div class="row">
-        <form action="{{ url_for('classify_reviews') }}" method="post" class="form-horizontal">
-            <div class="form-group col-md-12">
-                  <label class="control-label col-md-3" for="file_choice">Select reviews file:</label>
-                  <div class="col-md-5">
-                    <select id="file_choice" name="file_choice" class="form-control">
-                        {% for file_choice in file_choices %}
-                        <option>{{file_choice}}</option>
-                        {% endfor %}
-                    </select>
-                  </div>
-                <div class="col-md-4 btn-group" style="padding-left: 40px;">
-                  <input type="submit" name="action" value="Classify" class="btn btn-success">
-                  <input type="submit" name="action" value="Analyze" class="btn btn-success">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>User Reviews Analyser</h1>
                 </div>
             </div>
-        </form>
-        </div>
-        <div class="row">
-            <form action="{{ url_for('file_upload') }}" method=POST enctype=multipart/form-data>
-                <div class="form-group">
-                    <div class="row">
-                        <label class="control-label col-md-3" for="upload_button">Upload reviews file:</label>
-                        <div class="col-md-5">
-                            <input id="upload_button" type="file" class="btn btn-default form-control" name="file">
-                        </div>
-                            <div class="col-md-4">
-                            <input id="submit_button" type="submit" class="btn btn-success custom-button-width" value="Upload">
-                        </div>
-                    </div>
-
-                {% if invalid_file_error_msg %}
-                <div class="row">
-                    <br />
-                    <div class="alert alert-danger">
-                        {{invalid_file_error_msg}}
-                    </div>
+            <div class="row">
+                <div class="col-md-12">
+                <p class="lead">Blabla... some help descriptions</p>
                 </div>
-                {% endif %}
+            </div>
+            <br /> <br />
+            <div class="row col-md-9">
+            <form action="{{ url_for('classify_reviews') }}" method="post" class="form-horizontal">
+                <div class="form-group col-md-12">
+                      <label class="control-label col-md-3" for="file_choice">Select reviews file:</label>
+                      <div class="col-md-5">
+                        <select id="file_choice" name="file_choice" class="form-control">
+                            {% for file_choice in file_choices %}
+                            <option>{{file_choice}}</option>
+                            {% endfor %}
+                        </select>
+                      </div>
+                    <div class="col-md-4 btn-group" style="padding-left: 40px;">
+                      <input type="submit" name="action" value="Classify" class="btn btn-success">
+                      <input type="submit" name="action" value="Analyze" class="btn btn-success">
+                    </div>
                 </div>
             </form>
+            </div>
+            <div class="row col-md-9">
+                <form action="{{ url_for('file_upload') }}" method=POST enctype=multipart/form-data>
+                    <div class="form-group col-md-12">
+                        <div class="row">
+                            <label class="control-label col-md-3" for="upload_button">Upload reviews file:</label>
+                            <div class="col-md-5">
+                                <input id="upload_button" type="file" class="btn btn-default form-control" name="file">
+                            </div>
+                                <div class="col-md-4">
+                                <input id="submit_button" type="submit" class="btn btn-success custom-button-width" value="Upload">
+                            </div>
+                        </div>
+
+                    {% if invalid_file_error_msg %}
+                    <div class="row">
+                        <br />
+                        <div class="alert alert-danger">
+                            {{invalid_file_error_msg}}
+                        </div>
+                    </div>
+                    {% endif %}
+                    </div>
+                </form>
+            </div>
         </div>
+        <br />
+        <br />
+        <h3>Legend for Review Categories</h3>
+        <div class="row">
+            <div class="col-md-8">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th class="col-md-1">Icon</th>
+                      <th class="col-md-2">Category Name</th>
+                      <th class="col-md-5">Definition</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for category in categories %}
+                    <tr>
+                        <td><span class="icon-category icon-{{category[2]}} small" data-toggle="tooltip" title="{{category[2]}}"></span></td>
+                        <td><b>{{category[0]}}</b></td>
+                        <td>{{category[1]}}</td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+            </div>
         </div>
-    {% if result != None %}
-    <img src="{{ result }}" width="400">
-    {% endif %}
       </div>
 
     </div><!-- /.container -->

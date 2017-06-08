@@ -24,8 +24,10 @@ def find_files(files_path="./user_reviews_files/"):
 def index():
     form = InputForm(request.form)
     file_choices = find_files()
-    return render_template("view.html", form=form, file_choices=file_choices)
+    return render_template("view.html", form=form, file_choices=file_choices,
+                           categories=build_pretty_categories_list_with_definitions())
 
+print(build_pretty_categories_list())
 
 saved_data = {
     "data": pd.DataFrame(),
