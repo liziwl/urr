@@ -20,7 +20,7 @@ def find_files(files_path="./user_reviews_files/"):
     return [f for f in listdir(files_path) if isfile(join(files_path, f))]
 
 
-@app.route('/vib1', methods=['GET', 'POST'])
+@app.route('/main', methods=['GET', 'POST'])
 def index():
     form = InputForm(request.form)
     file_choices = find_files()
