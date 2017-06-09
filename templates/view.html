@@ -50,7 +50,7 @@
       </div>
     </nav>
 
-    <div class="container" style="padding-top: 100px;">
+    <div class="container" style="padding-top: 50px;">
         <div class="row">
             <div class="row">
                 <div class="col-md-12">
@@ -66,15 +66,15 @@
             <div class="row col-md-9">
             <form action="{{ url_for('classify_reviews') }}" method="post" class="form-horizontal">
                 <div class="form-group col-md-12">
-                      <label class="control-label col-md-3" for="file_choice">Select reviews file:</label>
-                      <div class="col-md-5">
+                      <label class="control-label col-md-3" for="file_choice" style="padding-right: 10px;">Select reviews file:</label>
+                      <div class="col-md-5" style="padding-left: 23px;">
                         <select id="file_choice" name="file_choice" class="form-control">
                             {% for file_choice in file_choices %}
                             <option>{{file_choice}}</option>
                             {% endfor %}
                         </select>
                       </div>
-                    <div class="col-md-4 btn-group" style="padding-left: 40px;">
+                    <div class="col-md-4 btn-group" style="padding-left: 35px;">
                       <input type="submit" name="action" value="Classify" class="btn btn-success">
                       <input type="submit" name="action" value="Analyze" class="btn btn-success">
                     </div>
@@ -85,11 +85,13 @@
                 <form action="{{ url_for('file_upload') }}" method=POST enctype=multipart/form-data>
                     <div class="form-group col-md-12">
                         <div class="row">
-                            <label class="control-label col-md-3" for="upload_button">Upload reviews file:</label>
-                            <div class="col-md-5">
+                            <div class="col-md-3" style="text-align:right;">
+                                <label class="control-label" for="upload_button">Upload reviews file:</label>
+                            </div>
+                            <div class="col-md-5" style="padding-right: 34px;">
                                 <input id="upload_button" type="file" class="btn btn-default form-control" name="file">
                             </div>
-                                <div class="col-md-4">
+                            <div class="col-md-4">
                                 <input id="submit_button" type="submit" class="btn btn-success custom-button-width" value="Upload">
                             </div>
                         </div>
