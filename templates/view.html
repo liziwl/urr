@@ -21,10 +21,11 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
       <link rel="stylesheet" href="{{ url_for('static',filename='basic.css') }}" type="text/css">
-
+         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-      <link href="{{ url_for('static',filename='plugins/bootstrap-fileinput/fileinput.min.css') }}" media="all" rel="stylesheet" type="text/css" />
-      <script src="{{ url_for('static',filename='plugins/bootstrap-fileinput/fileinput.min.js') }}"></script>
+      <link href="{{ url_for('static',filename='plugins/bootstrap-fileinput/css/fileinput.min.css') }}" media="all" rel="stylesheet" type="text/css" />
+      <script src="{{ url_for('static',filename='plugins/bootstrap-fileinput/js/fileinput.min.js') }}"></script>
+
 
   </head>
   <body>
@@ -75,8 +76,12 @@
                         </select>
                       </div>
                     <div class="col-md-4 btn-group" style="padding-left: 35px;">
-                      <input type="submit" name="action" value="Classify" class="btn btn-success">
-                      <input type="submit" name="action" value="Analyze" class="btn btn-success">
+                        <button id="classify" type="submit" name="action" value="Classify" class="btn btn-success" style="width: 100px;" onclick="$('#classify_spinner').show();">
+                            <i id="classify_spinner" class="fa fa-spinner fa-spin" style="padding:2px; display:none;"></i>Classify
+                        </button>
+                        <button id="analyze" type="submit" name="action" value="Analyze" class="btn btn-success" style="width: 100px;" onclick="$('#analyze_spinner').show();">
+                            <i id="analyze_spinner" class="fa fa-spinner fa-spin" style="padding:2px; display:none;"></i>Analyse
+                        </button>
                     </div>
                 </div>
             </form>
