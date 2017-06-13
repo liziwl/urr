@@ -18,6 +18,7 @@ saved_data = {
     "selected_file": ""
 }
 
+
 def round_nr(nr, digits=2):
     return float(("%." + str(digits) + "f") % nr)
 
@@ -26,7 +27,7 @@ def find_files(files_path="./user_reviews_files/"):
     return [f for f in listdir(files_path) if isfile(join(files_path, f))]
 
 
-def build_paging_info(data, page=0):
+def build_paging_info(data, selected_file, page=0):
     if data.empty:
         return {
             "has_prev": False,
@@ -40,7 +41,11 @@ def build_paging_info(data, page=0):
         "has_prev": has_prev,
         "prev": prev,
         "has_next": has_next,
-        "next": next
+        "next": next,
+        "total_reviews": len(data),
+        "start_review": PAGE_COUNT * page + 1,
+        "end_review": min(len(data), PAGE_COUNT * (page + 1)),
+        "selected_file": selected_file
     }
 
 
@@ -50,10 +55,10 @@ def compute_classified_reviews_data(selected_file):
     saved_data["selected_file"] = selected_file
     saved_data["data"] = data
     saved_data["all_data"] = data
-    return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)
+    return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data, saved_data["selected_file"])
 
 
-def compute_analysis_data(data, categories, neg_category="IS_ERROR"):
+def compute_analysis_data(data, categories, neg_category="IS_" + COMPLAINT):
     analysis_data = {}
     for category, pretty_category in categories:
         if category == neg_category:
@@ -72,7 +77,7 @@ def compute_analysis_data(data, categories, neg_category="IS_ERROR"):
 def generate_analysis_data(selected_file):
     global saved_data
     compute_classified_reviews_data(selected_file)
-    return compute_analysis_data(saved_data["all_data"], build_pretty_categories_list(), "IS_ERROR")
+    return compute_analysis_data(saved_data["all_data"], build_pretty_categories_list(), "IS_" + COMPLAINT)
 
 
 def get_paged_data(page):
@@ -82,8 +87,8 @@ def get_paged_data(page):
         data = saved_data["data"]
         saved_data["page"] = page
         data = data[page * PAGE_COUNT: (page + 1) * PAGE_COUNT]
-        return data, build_paging_info(saved_data["data"], page)
-    return data, build_paging_info(data)
+        return data, build_paging_info(saved_data["data"], saved_data["selected_file"], page)
+    return data, build_paging_info(data, saved_data["selected_file"])
 
 
 def extract_filtering_categories(request):
@@ -106,7 +111,8 @@ def get_filtered_data(filtering_categories):
         for category in filtering_categories:
             data = data.loc[data["PREDICTED_" + category] != ""]
         saved_data["data"] = data
-    return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], build_paging_info(data)
+    return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], \
+           build_paging_info(data, saved_data["selected_file"])
 
 
 def allowed_file(app, filename):

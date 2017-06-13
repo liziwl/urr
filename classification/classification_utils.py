@@ -38,9 +38,7 @@ PROTECTION = 'PROTECTION'
 SECURITY = 'SECURITY'
 PRIVACY = 'PRIVACY'
 
-ERROR = 'ERROR'
-
-OTHER = 'OTHER'
+COMPLAINT = 'COMPLAINT'
 
 REVIEW_FIELD = "reviewText"
 RATING_FIELD = "ratingStars"
@@ -52,7 +50,7 @@ cat_subcat_dict = {
     RESOURCES: [PERFORMANCE, BATTERY, MEMORY],
     PRICING: [LICENSING, PRICE],
     PROTECTION: [SECURITY, PRIVACY],
-    ERROR: [ERROR],
+    COMPLAINT: [COMPLAINT]
 }
 
 categories_definitions = {
@@ -68,7 +66,7 @@ categories_definitions = {
     PRICE: "talks about money aspects (i.e. donated $5)",
     SECURITY: "talks about the security/lack of it",
     PRIVACY: "issues related to permissions and user data",
-    ERROR: "the users reports or complains about an issue with the app"
+    COMPLAINT: "the users reports or complains about an issue with the app"
 }
 
 

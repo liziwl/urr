@@ -56,6 +56,11 @@
     background-size: cover;
 }
 
+.icon-category.icon-complaint {
+    background: url("../static/icons/complaint.png");
+    background-size: cover;
+}
+
 .icon-category.icon-hardware {
     background: url("../static/icons/hardware.png");
     background-size: cover;
