@@ -109,6 +109,14 @@
                         </div>
                     </div>
                     {% endif %}
+                    {% if success_msg %}
+                    <div class="row">
+                        <br />
+                        <div class="alert alert-success">
+                            {{success_msg}}
+                        </div>
+                    </div>
+                    {% endif %}
                     </div>
                 </form>
             </div>

@@ -43,6 +43,7 @@ ERROR = 'ERROR'
 OTHER = 'OTHER'
 
 REVIEW_FIELD = "reviewText"
+RATING_FIELD = "ratingStars"
 USER_REVIEWS_HOME = "user_reviews_files"
 
 cat_subcat_dict = {
