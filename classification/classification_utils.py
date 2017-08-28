@@ -227,8 +227,6 @@ def build_pretty_categories_list_with_definitions():
                                               category.lower().replace(" ", "_")))
     return pretty_categories_definitions
 
-print(build_pretty_categories_list_with_definitions())
-
 
 def build_pretty_categories_list_with_checked(filtering_categories):
     pretty_categories = build_pretty_categories_list()
