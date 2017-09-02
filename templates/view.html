@@ -43,8 +43,6 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
               <li class="active"><a href="{{ url_for('index')}}">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#contact">Contact</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -79,11 +77,11 @@
                         </select>
                       </div>
                     <div class="col-md-4 btn-group" style="padding-left: 35px;">
-                        <button id="classify" type="submit" name="action" value="Classify" class="btn btn-success" style="width: 100px;" onclick="$('#classify_spinner').show();">
-                            <i id="classify_spinner" class="fa fa-spinner fa-spin" style="padding:2px; display:none;"></i>Classify
-                        </button>
                         <button id="analyze" type="submit" name="action" value="Analyze" class="btn btn-success" style="width: 100px;" onclick="$('#analyze_spinner').show();">
                             <i id="analyze_spinner" class="fa fa-spinner fa-spin" style="padding:2px; display:none;"></i>Analyse
+                        </button>
+                        <button id="classify" type="submit" name="action" value="Classify" class="btn btn-success" style="width: 100px;" onclick="$('#classify_spinner').show();">
+                            <i id="classify_spinner" class="fa fa-spinner fa-spin" style="padding:2px; display:none;"></i>Classify
                         </button>
                     </div>
                 </div>
