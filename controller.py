@@ -4,14 +4,15 @@ from werkzeug import secure_filename
 from classification.classification_utils import *
 from utils import *
 from flask import redirect, url_for
+import logging
 
-
+logging.basicConfig(level=logging.DEBUG)
 app = Flask(__name__)
 
 app.config['ALLOWED_EXTENSIONS'] = set(['csv'])
 
 
-@app.route('/main', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def index():
     form = InputForm(request.form)
     file_choices = find_files()
@@ -34,7 +35,7 @@ def classify_reviews(page=1):
     selected_file = request.form.get("file_choice", None)
     action = request.form.get("action", None)
     filtering_categories = extract_filtering_categories(request)
-    print("Filtering categories: %s" % filtering_categories)
+    logging.info("Filtering categories: %s" % filtering_categories)
     if selected_file and action == "Classify":
         data, paging_info = compute_classified_reviews_data(selected_file)
     elif selected_file and action == "Analyze":
