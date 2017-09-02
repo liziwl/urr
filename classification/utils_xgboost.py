@@ -17,8 +17,8 @@ def predict(clf, data):
 
 def main():
     filepath = "./data/train_reviews_manual.csv"
-    evaluate_classification(filepath, "./evaluation_results.txt", "reviewText", build_categories_list(), 5,
-                            XGBClassifier(), x_predict, "..")
+    #evaluate_classification(filepath, "./evaluation_results.txt", "reviewText", build_categories_list(), 5,
+     #                       XGBClassifier(), x_predict, "..")
     evaluate_classification(filepath, "./evaluation_results.txt", "reviewText", build_categories_list(), 5,
                             ensemble.GradientBoostingClassifier(verbose=2, n_estimators=50), x_predict, "..")
 

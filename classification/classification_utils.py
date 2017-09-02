@@ -11,6 +11,7 @@ from sklearn.externals import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.metrics import f1_score, precision_score, recall_score, classification_report
+from sklearn.metrics import precision_recall_fscore_support
 from sklearn.model_selection import StratifiedShuffleSplit
 from sklearn.pipeline import Pipeline
 
@@ -74,6 +75,7 @@ def preprocess_review(review):
     try:
         # remove punctuation
         exclude = set(string.punctuation)
+        # TODO(adelina): replace with space
         review = ''.join(ch for ch in review if ch not in exclude)
         # remove stop words
         filtered_words = [word for word in review.split(' ') if word not in stopwords.words('english')]
@@ -128,29 +130,35 @@ def load_or_evaluate_classification(filepath, review_field, categories, cached, 
     return results
 
 
+def _add_scores(results, prec_rec_f1):
+    results["precision"].append(prec_rec_f1[0])
+    results["recall"].append(prec_rec_f1[1])
+    results["f1_score"].append(prec_rec_f1[2])
+
+
 def evaluate_classification(filepath, results_filepath, review_field, categories, k, clf, predict, homepath):
+    print("Writing scores to: %s" % results_filepath)
+
     with open(results_filepath, "a+") as writer:
-        print(">>>>> Evaluating %s\n" % clf)
         writer.write(">>>>> Evaluating %s\n" % clf)
-        all_results = {}
+        all_scores = {}
         time_1 = time.time()
         data, X, _ = preprocess_review_data(filepath=filepath, review_field=review_field, text_prep=None,
                                             homepath=homepath)
         diff = time.time() - time_1
         writer.write(">>>>> Preprocessing: %.2f seconds\n" % diff)
         time_1 = time.time()
-        for category in categories[0:1]:
+        for category in categories:
             writer.write("\n\n>>>>> For category: %s\n" % category)
 
             y = data[category]
             splitter = StratifiedShuffleSplit(n_splits=k, test_size=0.2, random_state=0)
 
-            results = {
+            scores = {
                 "f1_score": [],
                 "precision": [],
                 "recall": []
             }
-
             for train_idx, test_idx in splitter.split(X, y):
                 X_train, X_test, y_train, y_test = X[train_idx], X[test_idx], y.iloc[train_idx], y.iloc[test_idx]
                 clf.fit(X_train.toarray(), y_train)
@@ -161,30 +169,27 @@ def evaluate_classification(filepath, results_filepath, review_field, categories
                 diff = time.time() - time_1
                 writer.write(">>>>> Prediction: %.2f seconds\n" % diff)
                 time_1 = time.time()
-                # y_pred = [round(value) for value in y_pred]
-                results["f1_score"].append(f1_score(y_test, y_pred, average="weighted"))
-                results["precision"].append(precision_score(y_test, y_pred, average="weighted"))
-                results["recall"].append(precision_score(y_test, y_pred, average="weighted"))
+                prec_rec_f1 = precision_recall_fscore_support(y_test, y_pred, average="binary", pos_label=1)
+                _add_scores(scores, prec_rec_f1)
                 writer.write(classification_report(y_test, y_pred))
                 writer.write("precision: %.2f recall: %.2f f1_score: %.2f\n" %
-                                                            (precision_score(y_test, y_pred, average="weighted"),
-                                                             recall_score(y_test, y_pred, average="weighted"),
-                                                             f1_score(y_test, y_pred, average="weighted")))
+                             (prec_rec_f1[0], prec_rec_f1[1], prec_rec_f1[2]))
                 diff = time.time() - time_1
                 writer.write(">>>>> One evaluation loop: %.2f seconds\n" % diff)
                 time_1 = time.time()
 
-            for score, values in results.iteritems():
-                results[score] = sum(values) / len(values)
-            all_results[category] = results
-            pkl_file = open(os.path.join(".", "internal_data", "results.pkl"), 'wb')
-            pickle.dump(results, pkl_file, -1)
+            for score, values in scores.iteritems():
+                scores[score] = sum(values) / len(values)
+            all_scores[category] = scores
+            pkl_file = open(os.path.join(".", "internal_data", "scores.pkl"), 'wb')
+            pickle.dump(scores, pkl_file, -1)
         writer.write("\n\nFINAL REPORT FOR %s\n\n" % type(clf))
-        for category, results in all_results.iteritems():
+        for category, scores in all_scores.iteritems():
             writer.write("For category: %s\n" % category)
-            writer.write("Results: %s\n" % results)
-        return all_results
-    print("Finished writing evaluation results to %s." % results_filepath)
+            writer.write("Results: %s\n" % scores)
+
+    print("Finished writing evaluation scores to %s." % results_filepath)
+    return all_scores
 
 
 def train_classifier(clf, X_train, y_train):
