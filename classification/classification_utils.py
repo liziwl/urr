@@ -71,14 +71,16 @@ categories_definitions = {
 }
 
 
-def preprocess_review(review):
+def preprocess_review(review, remove_stopwords=False):
     try:
         # remove punctuation
         exclude = set(string.punctuation)
-        # TODO(adelina): replace with space
         review = ''.join(ch for ch in review if ch not in exclude)
         # remove stop words
-        filtered_words = [word for word in review.split(' ') if word not in stopwords.words('english')]
+        if remove_stopwords:
+            filtered_words = [word for word in review.split() if word not in stopwords.words('english')]
+        else:
+            filtered_words = review.split()
         # apply stemming
         return ' '.join([stemmer.stem(word) for word in filtered_words])
     except Exception as e:
@@ -87,7 +89,7 @@ def preprocess_review(review):
 
 
 def create_preprocessing_pipeline(text_data):
-    text_prep = Pipeline([("vect", CountVectorizer(min_df=5, ngram_range=(1, 3), stop_words="english")),
+    text_prep = Pipeline([("vect", CountVectorizer(min_df=5, ngram_range=(1, 3))),
                           ("tfidf", TfidfTransformer(norm=None))])
     text_prep.fit(text_data)
     return text_prep
@@ -233,8 +235,17 @@ def build_pretty_categories_list_with_definitions():
     return pretty_categories_definitions
 
 
+def find_category_index(category, categories_list):
+    for index, cat_tuple in enumerate(categories_list):
+        if category == cat_tuple[0] or category in cat_tuple[0]:
+            return index
+    return -1
+
+
 def build_pretty_categories_list_with_checked(filtering_categories):
     pretty_categories = build_pretty_categories_list()
+    complaint_index = find_category_index(COMPLAINT, pretty_categories)
+    pretty_categories.insert(complaint_index + 1, ('IS_NOT_COMPLAINT', 'Not Complaint'))
     for i in range(len(pretty_categories)):
         pretty_categories[i] += ("checked",) if pretty_categories[i][0] in filtering_categories else ("", )
 

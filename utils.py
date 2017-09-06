@@ -108,8 +108,13 @@ def get_filtered_data(filtering_categories):
     if reset_filtering(filtering_categories):
         saved_data["data"] = saved_data["all_data"]
     else:
+
         for category in filtering_categories:
-            data = data.loc[data["PREDICTED_" + category] != ""]
+            # special case of Not Complaint
+            if "IS_NOT_COMPLAINT" == category:
+                data = data.loc[data["PREDICTED_IS_COMPLAINT"] == ""]
+            else:
+                data = data.loc[data["PREDICTED_" + category] != ""]
         saved_data["data"] = data
     return data[saved_data["page"] * PAGE_COUNT: (saved_data["page"] + 1) * PAGE_COUNT], \
            build_paging_info(data, saved_data["selected_file"])

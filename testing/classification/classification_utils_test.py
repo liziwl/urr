@@ -27,6 +27,13 @@ class TestClassificationUtils(unittest.TestCase):
         actual_pretty_categories_list.sort()
         self.assertEquals(expected_pretty_categories_list, actual_pretty_categories_list)
 
+    def test_build_pretty_categories_list_with_checked(self):
+        pass
+
+    def test_find_category_index(self):
+        self.assertEquals(0, find_category_index("IS_" + COMPLAINT, build_pretty_categories_list()))
+        self.assertEquals(0, find_category_index(COMPLAINT, build_pretty_categories_list()))
+
     def test_preprocess_review(self):
         expected_prep_review = preprocess_review("Cant activate lockscreen.... The app is not comes in usage access "
                                                  "permission option. Using Redmi Note 4G with Resurrection M Rom")
