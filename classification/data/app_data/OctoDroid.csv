@@ -1,0 +1,46 @@
+IS_ANDROID VERSION,IS_APP USABILITY,IS_BATTERY,IS_COMPLAINT,IS_DEVICE,IS_HARDWARE,IS_LICENSING,IS_MEMORY,IS_PERFORMANCE,IS_PRICE,IS_PRIVACY,IS_SECURITY,IS_UI,Unnamed: 0,_id,app,appVersion,author,date,ratingStars,reviewText
+0,0,0,0,0,0,0,0,0,0,0,0,1,4141,572916f9507c69054da8e77f,OctoDroid,03.08.01,George Beasley,11.03.16,5,"Browse Github Octodroid is the best Github explorer I've used on Android. View Readme's, Source files, open links, in line video/gif support. Everything you need is here in a nice material design interface."
+0,0,0,0,0,0,0,0,0,0,0,0,0,4142,572916f9507c69054da8e780,OctoDroid,03.08.01,Florian Kaiser,08.03.16,4,GitHub Enterprise Please add support for GitHub Enterprise!
+0,0,0,0,0,0,0,0,0,0,0,0,1,4143,572916fd507c69054da8e787,OctoDroid,03.08.01,xete FiRe,20.01.16,4,"Some advice hoping to be taken advice for optimizations: 1) the row above could be designed to be smaller,with reading area larger 2) 'search' can be divided to get certain, which would now be long under poor network circumtances"
+0,0,0,1,0,0,0,0,0,0,0,0,0,4144,572916fd507c69054da8e788,OctoDroid,03.08.01,Mokhdzani Faeq,15.01.16,5,nice app the trending feature is not working though. 5 star if you fix that
+0,0,0,1,0,0,0,0,0,0,0,0,1,4145,57291701507c69054da8e795,OctoDroid,03.08.01,Daniel Strom,24.08.15,5,"Great app Missing support for tables in markdown. A menu link to the GitHub pages for any given project would be nice, if the gh-pages branch exists."
+0,0,0,1,0,0,0,0,0,0,0,0,1,4146,57291702507c69054da8e797,OctoDroid,03.08.01,Maarten Fonville,17.07.15,5,"Best github app available. 1 small request: under releases-&gt;downloads the downloads are shown in a very small scrollable frame. If this frame could be enlarged to show all downloads and enable scrolling for the whole screen, that would be great!"
+0,0,0,1,0,0,0,0,0,0,0,1,0,4147,57291707507c69054da8e79d,OctoDroid,03.08.01,Vicky Chijwani,07.06.15,3,"Shouldn't need my password Github supports OAuth, which means I should be able to sign in on the Github website securely rather than having to trust some random app with my password. Just saying ""app doesn't store password"" in the description is NOT ENOUGH."
+0,0,0,1,0,0,0,0,0,0,0,1,0,4148,572a252d507c6911e34d7796,OctoDroid,03.08.01,David Thomas,02.05.16,1,"Better login needed App should open a webpage in my phone's browser to authorize to GitHub. I don't trust random apps with my password if the provider supports Oauth. Change this, please."
+0,0,0,1,0,0,0,0,0,0,1,1,1,4149,572916fb507c69054da8e785,OctoDroid,03.08.01,Neil Scudder,06.02.16,3,"Great fonts, awkward navigation Should use oauth login. No code highlighting for golang :( Why does it need access to files?"
+0,0,0,0,0,0,0,0,0,0,0,0,0,4150,572916fd507c69054da8e786,OctoDroid,03.08.01,Joker Qyou,03.02.16,3,"So far so good, except... How can I view all the repos I stared?"
+0,1,0,0,0,0,0,0,1,0,0,0,0,4151,572916f7507c69054da8e776,OctoDroid,03.08.01,Alon Weiss,29.04.16,5,"Works as advertised, simple and fast"
+0,0,0,0,0,0,0,0,0,0,0,0,0,4152,572916f7507c69054da8e777,OctoDroid,03.08.01,Farid Iskandar,24.04.16,5,Good Apps Thanks
+0,0,0,0,0,0,0,0,0,0,0,0,0,4153,572916f7507c69054da8e778,OctoDroid,03.08.01,Chuck Norris,23.04.16,5,Simply works Does it better than anything else out there
+0,0,0,0,0,0,0,0,0,0,0,0,0,4154,572916f7507c69054da8e779,OctoDroid,03.08.01,Gus Ward,16.04.16,5,Best One
+0,0,0,0,0,0,0,0,0,0,0,0,0,4155,572916f8507c69054da8e77a,OctoDroid,03.08.01,F. Rafael Leon,12.04.16,5,Best github app. You need to login with a github account to remove the low API limits. This is a github server-side restriction.
+0,0,0,1,0,0,0,0,0,0,0,0,0,4156,572916f8507c69054da8e77b,OctoDroid,03.08.01,Shane Scott,10.04.16,1,Unable to login Keep getting bad request when logging in. Unable to use.
+0,0,0,0,0,0,0,0,0,0,0,0,0,4157,572916f8507c69054da8e77c,OctoDroid,03.08.01,Avi Aryan,05.04.16,5,Some caching would be lovely but still a good app
+0,0,0,0,0,0,0,0,1,0,0,0,0,4158,572916f8507c69054da8e77d,OctoDroid,03.08.01,Werner Mayer,03.04.16,5,Wow Really fast... And beautiful.
+0,1,0,0,0,0,0,0,0,0,0,0,1,4159,572916f9507c69054da8e77e,OctoDroid,03.08.01,Rajat Jaiswal,19.03.16,5,"Simple yet useful Includes material design, simple interface, user friendly."
+0,0,0,0,0,0,0,0,0,0,0,0,0,4160,572916f9507c69054da8e781,OctoDroid,03.08.01,Michael Walker,07.03.16,5,Tried them all This is the only useable git client for android.
+0,0,0,1,0,0,0,0,0,0,0,0,1,4161,572916fb507c69054da8e782,OctoDroid,03.08.01,Kuba Orzech,06.03.16,2,Useless No way to get back to parent directory in files list
+0,1,0,0,0,0,0,0,0,0,0,0,0,4162,572916fb507c69054da8e783,OctoDroid,03.08.01,Pankaj swami,29.02.16,5,Awesome app One of the best and user friendly app to access github account on mobile devices...
+0,0,0,0,0,0,0,0,0,0,0,0,0,4163,572916fb507c69054da8e784,OctoDroid,03.08.01,Œ«¾¦Ý,21.02.16,5,nice product best github client
+0,0,0,0,0,0,0,0,0,0,0,0,0,4164,572916fe507c69054da8e789,OctoDroid,03.08.01,Stefan Gabos,14.01.16,5,"Very good Been using the official app for some time but it lacked a lot. This is very, very good! Thanks!"
+0,0,0,0,0,0,0,0,0,0,0,0,0,4165,572916fe507c69054da8e78a,OctoDroid,03.08.01,Mars v.,01.01.16,5,"Ayyyyyyyy, nice job on this! Very good and clean github client"
+0,0,0,0,0,0,0,0,0,0,0,0,0,4166,572916fe507c69054da8e78b,OctoDroid,03.08.01,Aminul Hasan,13.12.15,5,Enjoying it!
+0,0,0,0,0,0,0,0,0,0,0,0,1,4167,572916fe507c69054da8e78c,OctoDroid,03.08.01,Greg Dennis,23.11.15,3,"Good at what it does It seems good for what it is, but I really want notifications. Add, and I'll reinstall."
+0,0,0,0,0,0,0,0,0,0,0,0,1,4168,572916ff507c69054da8e78d,OctoDroid,03.08.01,Nitai Charan,20.11.15,4,"Good, but.... Where is the option for notification? This is a good app, but it's gonna be better if this app got that"
+0,0,0,0,0,0,0,0,0,0,0,0,0,4169,572916ff507c69054da8e78e,OctoDroid,03.08.01,Adam Unger,28.10.15,5,Good job! Works well and looks good!
+0,0,0,0,0,0,0,0,0,0,0,0,0,4170,572916ff507c69054da8e78f,OctoDroid,03.08.01,Mihai Petrescu,25.10.15,5,It does the job very well.
+0,0,0,0,0,0,0,0,0,0,0,0,0,4171,572916ff507c69054da8e790,OctoDroid,03.08.01,Œ«¾øÉŒ´Ü,08.10.15,4,Good one.
+0,0,0,0,0,0,1,0,0,1,0,0,0,4172,572916ff507c69054da8e791,OctoDroid,03.08.01,Bevan Hunt,18.09.15,5,Free and open source Use it all the time
+0,1,0,0,0,0,0,0,0,0,0,0,1,4173,57291701507c69054da8e792,OctoDroid,03.08.01,Jacob Young,09.09.15,5,Simple interface Well designed. I use this over Github's app which was lacking at the time. Haven't found a reason yet to go back.
+0,0,0,0,0,0,0,0,0,0,0,0,0,4174,57291701507c69054da8e793,OctoDroid,03.08.01,David Eisner,09.09.15,5,This is still the best GitHub thing.
+0,0,0,0,0,0,0,0,0,0,0,0,0,4175,57291701507c69054da8e794,OctoDroid,03.08.01,Archit Verma,01.09.15,5,The best github app out there
+0,0,0,0,0,0,0,0,1,0,0,0,1,4176,57291702507c69054da8e796,OctoDroid,03.08.01,Noel Milton Vega,19.07.15,5,"A nice interface into GitHub... It does what it says, and the UI is very clean and crisp and responsive. Keep up the good work! =:)"
+0,0,0,0,0,0,0,0,0,0,0,0,0,4177,57291702507c69054da8e798,OctoDroid,03.08.01,Volodia Chornenkyy,17.07.15,4,Pls add contributions diagram to user profile
+0,0,0,1,0,0,0,0,0,0,0,0,0,4178,57291702507c69054da8e799,OctoDroid,03.08.01,David Bronke,15.07.15,2,Can't search issues? Disappointing...
+0,0,0,1,1,0,0,0,0,0,0,0,1,4179,57291705507c69054da8e79a,OctoDroid,03.08.01,Tommy Wooding Jr,30.06.15,3,"Nice app, but I REALLY dislike how the app's back button isn't in sync with my Nexus navbar back button in terms of functionality. Using my navbar buttons does its back function right, unlike the app's back button which will sometimes exit the app even if I'm a few pages deep."
+0,0,0,0,0,0,0,0,0,0,0,0,0,4180,57291705507c69054da8e79b,OctoDroid,03.08.01,Uwe Duesing,22.06.15,5,Very nice Works really well
+0,0,0,0,0,0,0,0,0,0,0,0,1,4181,57291705507c69054da8e79c,OctoDroid,03.08.01,Nevin Valsaraj,17.06.15,5,"The best Github app, hands down. Particularly well designed UI."
+0,0,0,0,0,0,0,0,0,0,0,0,0,4182,57291708507c69054da8e79e,OctoDroid,03.08.01,Patrick Shields,07.06.15,5,Best github app
+0,0,0,0,0,0,0,0,0,0,0,0,0,4183,57291708507c69054da8e79f,OctoDroid,03.08.01,JuliÌÁn DÌ_az,06.06.15,5,better than the official app!
+0,0,0,0,0,0,0,0,0,0,0,0,0,4184,57291708507c69054da8e7a0,OctoDroid,03.08.01,Peter Landwehr,06.06.15,5,"Just right Does what it says, and well. Github could learn a few things from Octodroid."
+0,0,0,0,0,0,0,0,0,0,0,0,0,4185,57291708507c69054da8e7a1,OctoDroid,03.08.01,Christoph Waldhauser,06.06.15,5,Perfect for GitHub
