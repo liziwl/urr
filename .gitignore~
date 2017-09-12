@@ -2,3 +2,8 @@
 *.pyc
 venv/
 .DS_Store
+temp/
+reviews_dataset_preprocessing/reviews_files/
+classified_reviews_cache/
+preprocessed_files/
+classification/internal_data/
