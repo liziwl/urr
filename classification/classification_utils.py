@@ -71,7 +71,7 @@ categories_definitions = {
 }
 
 
-def preprocess_review(review, remove_stopwords=False):
+def preprocess_review(review, remove_stopwords=True):
     try:
         # remove punctuation
         exclude = set(string.punctuation)
@@ -115,7 +115,6 @@ def preprocess_review_data(filepath, review_field, text_prep=None, homepath=".")
         return data, text_prep.transform(data["prep_" + review_field]), text_prep
 
     data = load_and_save_review_data(filepath, review_field, cached_filepath)
-
     if text_prep:
         return data, text_prep.transform(data["prep_" + review_field]), text_prep
 
@@ -135,11 +134,34 @@ def load_or_evaluate_classification(filepath, review_field, categories, cached, 
 def _add_scores(results, prec_rec_f1):
     results["precision"].append(prec_rec_f1[0])
     results["recall"].append(prec_rec_f1[1])
-    results["f1_score"].append(prec_rec_f1[2])
+    results["f1"].append(prec_rec_f1[2])
 
 
-def evaluate_classification(filepath, results_filepath, review_field, categories, k, clf, predict, homepath):
-    print("Writing scores to: %s" % results_filepath)
+def _write_csv_results(csv_results_filepath, scores):
+    categories = []
+    f1s = []
+    precisions = []
+    recalls = []
+    classifiers = []
+    for category, scores in scores.iteritems():
+        categories.append(category)
+        f1s.append(scores["f1"])
+        precisions.append(scores["precision"])
+        recalls.append(scores["recall"])
+        classifiers.append(scores["classifier"])
+    evaluation_data = pd.DataFrame({
+        "category": categories,
+        "f1": f1s,
+        "precision": precisions,
+        "recall": recalls,
+        "classifier": classifiers
+    })
+    evaluation_data.to_csv(csv_results_filepath, index=False)
+
+
+def evaluate_classification(filepath, results_filepath, csv_results_filepath, review_field, categories, k, clf, predict,
+                            homepath):
+    print("Writing evaluation scores to: %s" % results_filepath)
 
     with open(results_filepath, "a+") as writer:
         writer.write(">>>>> Evaluating %s\n" % clf)
@@ -147,17 +169,21 @@ def evaluate_classification(filepath, results_filepath, review_field, categories
         time_1 = time.time()
         data, X, _ = preprocess_review_data(filepath=filepath, review_field=review_field, text_prep=None,
                                             homepath=homepath)
+        print(data.dtypes)
+        print(data.columns)
         diff = time.time() - time_1
+        print(">>>>> Preprocessing: %.2f seconds\n" % diff)
         writer.write(">>>>> Preprocessing: %.2f seconds\n" % diff)
         time_1 = time.time()
         for category in categories:
+            print("\n\n>>>>> For category: %s\n" % category)
             writer.write("\n\n>>>>> For category: %s\n" % category)
 
             y = data[category]
             splitter = StratifiedShuffleSplit(n_splits=k, test_size=0.2, random_state=0)
 
             scores = {
-                "f1_score": [],
+                "f1": [],
                 "precision": [],
                 "recall": []
             }
@@ -173,6 +199,9 @@ def evaluate_classification(filepath, results_filepath, review_field, categories
                 time_1 = time.time()
                 prec_rec_f1 = precision_recall_fscore_support(y_test, y_pred, average="binary", pos_label=1)
                 _add_scores(scores, prec_rec_f1)
+                print(classification_report(y_test, y_pred))
+                print("precision: %.2f recall: %.2f f1_score: %.2f\n" %
+                             (prec_rec_f1[0], prec_rec_f1[1], prec_rec_f1[2]))
                 writer.write(classification_report(y_test, y_pred))
                 writer.write("precision: %.2f recall: %.2f f1_score: %.2f\n" %
                              (prec_rec_f1[0], prec_rec_f1[1], prec_rec_f1[2]))
@@ -182,16 +211,24 @@ def evaluate_classification(filepath, results_filepath, review_field, categories
 
             for score, values in scores.iteritems():
                 scores[score] = sum(values) / len(values)
+            scores["classifier"] = str(clf)
             all_scores[category] = scores
             pkl_file = open(os.path.join(".", "internal_data", "scores.pkl"), 'wb')
             pickle.dump(scores, pkl_file, -1)
         writer.write("\n\nFINAL REPORT FOR %s\n\n" % type(clf))
+        print("\n\nFINAL REPORT FOR %s\n\n" % type(clf))
         for category, scores in all_scores.iteritems():
             writer.write("For category: %s\n" % category)
             writer.write("Results: %s\n" % scores)
+            print("For category: %s\n" % category)
+            print("Results: %s\n" % scores)
+
+        _write_csv_results(csv_results_filepath, all_scores)
 
     print("Finished writing evaluation scores to %s." % results_filepath)
     return all_scores
+
+
 
 
 def train_classifier(clf, X_train, y_train):
