@@ -4,89 +4,89 @@ IS_LICENSING,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.858797999045,0.888948126979,0.832608695652
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.888868407359,0.927797086613,0.85652173913
 IS_APP USABILITY,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.782598132211,0.813659659536,0.755555555556
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.77931467996,0.790135006378,0.771717171717
 IS_PRICE,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.784597868972,0.77776435186,0.794444444444
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.822968253968,0.813435720789,0.833333333333
 IS_PERFORMANCE,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.62789114659,0.736501652176,0.551851851852
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.617824756138,0.703832678525,0.555555555556
 IS_ANDROID VERSION,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.651269731628,0.790003180564,0.56
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.644907405563,0.774543175557,0.56
 IS_UI,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.713899372019,0.892794655763,0.595081967213
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.742942632423,0.877664902515,0.644590163934
 IS_COMPLAINT,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.720320790742,0.885581194011,0.607323232323
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.756005194949,0.889801510594,0.657323232323
 IS_BATTERY,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.80419086933,0.852088744589,0.78
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.788591197244,0.780454545455,0.81
 IS_HARDWARE,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.640901630129,0.720729012533,0.58275862069
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.569029370825,0.649892339545,0.513793103448
 IS_SECURITY,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.790087649128,0.855140388388,0.73698630137
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.792693631709,0.833549312672,0.757534246575
 IS_MEMORY,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.544128177378,0.656626576038,0.473333333333
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.559691538749,0.707189296771,0.493333333333
 IS_PRIVACY,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.769626251042,0.797537669066,0.757142857143
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.764906166422,0.82117691287,0.72380952381
 IS_DEVICE,"GradientBoostingClassifier(criterion='friedman_mse', init=None,
               learning_rate=0.1, loss='deviance', max_depth=3,
               max_features=None, max_leaf_nodes=None,
               min_impurity_split=1e-07, min_samples_leaf=1,
               min_samples_split=2, min_weight_fraction_leaf=0.0,
-              n_estimators=100, presort='auto', random_state=None,
-              subsample=1.0, verbose=2, warm_start=False)",0.850554841884,0.926442655724,0.787209302326
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)",0.84176136093,0.885846480424,0.803488372093

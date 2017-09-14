@@ -71,7 +71,7 @@ categories_definitions = {
 }
 
 
-def preprocess_review(review, remove_stopwords=True):
+def preprocess_review(review, remove_stopwords=False):
     try:
         # remove punctuation
         exclude = set(string.punctuation)
@@ -117,7 +117,6 @@ def preprocess_review_data(filepath, review_field, text_prep=None, homepath=".")
     data = load_and_save_review_data(filepath, review_field, cached_filepath)
     if text_prep:
         return data, text_prep.transform(data["prep_" + review_field]), text_prep
-
     text_prep = create_preprocessing_pipeline(data[review_field])
     return data, text_prep.transform(data[review_field]), text_prep
 
@@ -207,12 +206,15 @@ def evaluate_classification(filepath, results_filepath, csv_results_filepath, re
                              (prec_rec_f1[0], prec_rec_f1[1], prec_rec_f1[2]))
                 diff = time.time() - time_1
                 writer.write(">>>>> One evaluation loop: %.2f seconds\n" % diff)
+                writer.flush()
                 time_1 = time.time()
 
             for score, values in scores.iteritems():
                 scores[score] = sum(values) / len(values)
             scores["classifier"] = str(clf)
             all_scores[category] = scores
+            writer.write("For category: %s\n" % category)
+            writer.write("Results: %s\n" % scores)
             pkl_file = open(os.path.join(".", "internal_data", "scores.pkl"), 'wb')
             pickle.dump(scores, pkl_file, -1)
         writer.write("\n\nFINAL REPORT FOR %s\n\n" % type(clf))

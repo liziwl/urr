@@ -5,7 +5,7 @@ import pandas as pd
 import time
 
 REVIEW_FIELD = "reviewText"
-TRAINING_PATH = "./data/reviews_data.csv"
+TRAINING_PATH = "./data/all_reviews_data.csv"
 
 
 def analyze_data():
@@ -23,20 +23,21 @@ def get_ending(csv=True):
     return ".csv" if csv else ".txt"
 
 
-def get_evaluation_filename(n_estimators, csv=True):
+def get_evaluation_filename(n_estimators, prefix="", csv=True):
     now = time.strftime("%c")
     now = "_".join(now.split())
     now = "_".join(now.split(":"))
-    return "./evaluation_results/evaluation_results_" + str(n_estimators) + "_" + now + get_ending(csv)
+    return "./evaluation_results/evaluation_results_" + str(n_estimators) + "_" + now + prefix + get_ending(csv)
 
 
 def main():
     subcategories = build_categories_list()
-    n_estimators = 200
-    clf = ensemble.GradientBoostingClassifier(verbose=2, n_estimators=n_estimators)
-    results = evaluate_classification(TRAINING_PATH, get_evaluation_filename(n_estimators, csv=False),
-                                      get_evaluation_filename(n_estimators), REVIEW_FIELD, subcategories, 10, clf,
-                                      predict, "..")
+    subcategories = ["IS_MEMORY"]
+    n_estimators = 400
+    clf = ensemble.GradientBoostingClassifier(verbose=2, learning_rate=0.01, n_estimators=n_estimators)
+    results = evaluate_classification(TRAINING_PATH, get_evaluation_filename(n_estimators, "all_data_mem", csv=False),
+                                      get_evaluation_filename(n_estimators, "all_data_mem"), REVIEW_FIELD,
+                                      subcategories, 10, clf, predict, "..")
     for key, values in results.iteritems():
         print("%s: %s" % (key, values))
 

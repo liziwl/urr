@@ -1,0 +1,119 @@
+>>>>> Evaluating GradientBoostingClassifier(criterion='friedman_mse', init=None,
+              learning_rate=0.1, loss='deviance', max_depth=3,
+              max_features=None, max_leaf_nodes=None,
+              min_impurity_split=1e-07, min_samples_leaf=1,
+              min_samples_split=2, min_weight_fraction_leaf=0.0,
+              n_estimators=200, presort='auto', random_state=None,
+              subsample=1.0, verbose=2, warm_start=False)
+>>>>> Preprocessing: 5.99 seconds
+
+
+>>>>> For category: IS_ANDROID VERSION
+>>>>> Fitting the classifier: 637.69 seconds
+>>>>> Prediction: 0.13 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1542
+          1       0.89      0.71      0.79        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.89 recall: 0.71 f1_score: 0.79
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 632.24 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      0.99      0.99      1542
+          1       0.85      0.76      0.80        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.85 recall: 0.76 f1_score: 0.80
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 622.99 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1542
+          1       0.93      0.82      0.87        79
+
+avg / total       0.99      0.99      0.99      1621
+precision: 0.93 recall: 0.82 f1_score: 0.87
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 618.20 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      0.99      0.99      1542
+          1       0.78      0.80      0.79        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.78 recall: 0.80 f1_score: 0.79
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 620.19 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      0.99      0.99      1542
+          1       0.81      0.81      0.81        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.81 recall: 0.81 f1_score: 0.81
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 629.52 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      0.99      0.99      1542
+          1       0.82      0.70      0.75        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.82 recall: 0.70 f1_score: 0.75
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 626.03 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1542
+          1       0.90      0.78      0.84        79
+
+avg / total       0.98      0.99      0.98      1621
+precision: 0.90 recall: 0.78 f1_score: 0.84
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 621.86 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      0.99      0.99      1542
+          1       0.86      0.75      0.80        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.86 recall: 0.75 f1_score: 0.80
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 624.59 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1542
+          1       0.89      0.73      0.81        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.89 recall: 0.73 f1_score: 0.81
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 623.29 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.98      0.99      0.99      1542
+          1       0.84      0.68      0.76        79
+
+avg / total       0.98      0.98      0.98      1621
+precision: 0.84 recall: 0.68 f1_score: 0.76
+>>>>> One evaluation loop: 0.00 seconds
+For category: IS_ANDROID VERSION
+Results: {'f1': 0.8008202301590881, 'classifier': "GradientBoostingClassifier(criterion='friedman_mse', init=None,\n              learning_rate=0.1, loss='deviance', max_depth=3,\n              max_features=None, max_leaf_nodes=None,\n              min_impurity_split=1e-07, min_samples_leaf=1,\n              min_samples_split=2, min_weight_fraction_leaf=0.0,\n              n_estimators=200, presort='auto', random_state=None,\n              subsample=1.0, verbose=2, warm_start=False)", 'precision': 0.85610115031533385, 'recall': 0.75443037974683558}
+
+
+FINAL REPORT FOR <class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>
+
+For category: IS_ANDROID VERSION
+Results: {'f1': 0.8008202301590881, 'classifier': "GradientBoostingClassifier(criterion='friedman_mse', init=None,\n              learning_rate=0.1, loss='deviance', max_depth=3,\n              max_features=None, max_leaf_nodes=None,\n              min_impurity_split=1e-07, min_samples_leaf=1,\n              min_samples_split=2, min_weight_fraction_leaf=0.0,\n              n_estimators=200, presort='auto', random_state=None,\n              subsample=1.0, verbose=2, warm_start=False)", 'precision': 0.85610115031533385, 'recall': 0.75443037974683558}
