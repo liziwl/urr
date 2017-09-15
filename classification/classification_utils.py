@@ -71,7 +71,7 @@ categories_definitions = {
 }
 
 
-def preprocess_review(review, remove_stopwords=False):
+def preprocess_review(review, remove_stopwords=True):
     try:
         # remove punctuation
         exclude = set(string.punctuation)
@@ -95,9 +95,9 @@ def create_preprocessing_pipeline(text_data):
     return text_prep
 
 
-def load_and_save_review_data(filepath, review_field, saved_filepath):
+def load_and_save_review_data(filepath, review_field, saved_filepath, remove_stopwords=True):
     data = pd.read_csv(filepath, encoding="ISO-8859-1", error_bad_lines=False)
-    data["prep_" + review_field] = data[review_field].apply(lambda review: preprocess_review(review))
+    data["prep_" + review_field] = data[review_field].apply(lambda review: preprocess_review(review, remove_stopwords))
     data = data.sample(frac=1).reset_index(drop=True)
     joblib.dump(data, saved_filepath)
     return data
@@ -108,13 +108,14 @@ def get_cached_filepath(filepath, homepath):
     return os.path.join(homepath, "preprocessed_files", filename)
 
 
-def preprocess_review_data(filepath, review_field, text_prep=None, homepath="."):
-    cached_filepath = get_cached_filepath(filepath, homepath)
-    if os.path.isfile(cached_filepath) and text_prep:
-        data = joblib.load(cached_filepath)
-        return data, text_prep.transform(data["prep_" + review_field]), text_prep
+def preprocess_review_data(filepath, review_field, text_prep=None, homepath=".", cached=True, remove_stopwords=True):
+    save_filepath = get_cached_filepath(filepath, homepath)
+    if cached:
+        if os.path.isfile(save_filepath) and text_prep:
+            data = joblib.load(save_filepath)
+            return data, text_prep.transform(data["prep_" + review_field]), text_prep
 
-    data = load_and_save_review_data(filepath, review_field, cached_filepath)
+    data = load_and_save_review_data(filepath, review_field, save_filepath, remove_stopwords)
     if text_prep:
         return data, text_prep.transform(data["prep_" + review_field]), text_prep
     text_prep = create_preprocessing_pipeline(data[review_field])
@@ -231,8 +232,6 @@ def evaluate_classification(filepath, results_filepath, csv_results_filepath, re
     return all_scores
 
 
-
-
 def train_classifier(clf, X_train, y_train):
     clf.fit(X_train.toarray(), y_train)
     return clf
@@ -251,6 +250,24 @@ def train_and_save_models(filepath, review_field, categories):
             os.makedirs(directory)
         joblib.dump(clf, os.path.join(directory, "model.pkl"))
         joblib.dump(model_details, os.path.join(directory, "model_details.pkl"))
+
+
+def train_and_save_model(review_field, category, model_config):
+    data, X, text_prep = preprocess_review_data(filepath=model_config["data_path"], review_field=review_field,
+                                                homepath="..", cached=False,
+                                                remove_stopwords=model_config["with_stopwords"])
+    directory = os.path.join(".", "best_models", category)
+    joblib.dump(text_prep, os.path.join(directory, "text_prep.pkl"))
+    print("Training classifier for category %s" % category)
+    clf = train_classifier(ensemble.GradientBoostingClassifier(verbose=2, n_estimators=model_config["n_estimators"]), X,
+                           data[category])
+    model_details = {"text_field": review_field, "category": category}
+
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+    joblib.dump(clf, os.path.join(directory, "model.pkl"))
+    joblib.dump(model_details, os.path.join(directory, "model_details.pkl"))
+    print("Finished training and saving classifier for category %s" % category)
 
 
 def build_categories_list():
@@ -306,13 +323,15 @@ def classify_and_save_results(filepath, review_field, categories):
     if os.path.isfile(cached_filepath):
         data = joblib.load(cached_filepath)
         return data
-    text_prep = joblib.load(os.path.join(".", "classification", "internal_data", "text_prep.pkl"))
+    models_dir_name = "best_models"
+    # text_prep = joblib.load(os.path.join(".", "classification", models_dir_name, "text_prep.pkl"))
+    text_prep = joblib.load("./classification/best_models/IS_LICENSING/text_prep.pkl")
     data, X, _ = preprocess_review_data(filepath, review_field, text_prep)
     pred_categories = []
     for category in categories:
         print("Category: %s" % category)
 
-        directory = os.path.join(".", "classification", "internal_data", category)
+        directory = os.path.join(".", "classification", models_dir_name, category)
         clf = joblib.load(os.path.join(directory, "model.pkl"))
         y_pred = clf.predict(X.toarray())
         data["PREDICTED_" + category] = [preprocess_category_name(category) if pred == 1 else "" for pred in y_pred]

@@ -79,3 +79,41 @@ precision: 0.82 recall: 0.50 f1_score: 0.62
 avg / total       0.99      0.99      0.99      1621
 precision: 0.86 recall: 0.50 f1_score: 0.63
 >>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 1314.67 seconds
+>>>>> Prediction: 0.15 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1585
+          1       0.89      0.44      0.59        36
+
+avg / total       0.99      0.99      0.98      1621
+precision: 0.89 recall: 0.44 f1_score: 0.59
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 1326.14 seconds
+>>>>> Prediction: 0.09 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1585
+          1       0.82      0.50      0.62        36
+
+avg / total       0.98      0.99      0.98      1621
+precision: 0.82 recall: 0.50 f1_score: 0.62
+>>>>> One evaluation loop: 0.00 seconds
+>>>>> Fitting the classifier: 1381.00 seconds
+>>>>> Prediction: 0.14 seconds
+             precision    recall  f1-score   support
+
+          0       0.99      1.00      0.99      1585
+          1       0.80      0.44      0.57        36
+
+avg / total       0.98      0.99      0.98      1621
+precision: 0.80 recall: 0.44 f1_score: 0.57
+>>>>> One evaluation loop: 0.00 seconds
+For category: IS_MEMORY
+Results: {'f1': 0.60570920576365217, 'classifier': "GradientBoostingClassifier(criterion='friedman_mse', init=None,\n              learning_rate=0.01, loss='deviance', max_depth=3,\n              max_features=None, max_leaf_nodes=None,\n              min_impurity_split=1e-07, min_samples_leaf=1,\n              min_samples_split=2, min_weight_fraction_leaf=0.0,\n              n_estimators=400, presort='auto', random_state=None,\n              subsample=1.0, verbose=2, warm_start=False)", 'precision': 0.82890509101035426, 'recall': 0.48055555555555562}
+
+
+FINAL REPORT FOR <class 'sklearn.ensemble.gradient_boosting.GradientBoostingClassifier'>
+
+For category: IS_MEMORY
+Results: {'f1': 0.60570920576365217, 'classifier': "GradientBoostingClassifier(criterion='friedman_mse', init=None,\n              learning_rate=0.01, loss='deviance', max_depth=3,\n              max_features=None, max_leaf_nodes=None,\n              min_impurity_split=1e-07, min_samples_leaf=1,\n              min_samples_split=2, min_weight_fraction_leaf=0.0,\n              n_estimators=400, presort='auto', random_state=None,\n              subsample=1.0, verbose=2, warm_start=False)", 'precision': 0.82890509101035426, 'recall': 0.48055555555555562}
