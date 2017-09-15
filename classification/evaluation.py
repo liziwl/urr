@@ -1,4 +1,3 @@
-from utils import *
 from classification_utils import *
 import pandas as pd
 import time
@@ -31,7 +30,7 @@ def get_evaluation_filename(n_estimators, suffix="", csv=True):
 
 def main():
     subcategories = build_categories_list()
-    # subcategories = ["IS_MEMORY"]
+    subcategories = ["IS_SECURITY", "IS_PRIVACY", "IS_COMPLAINT"]
     n_estimators = 200
     clf = ensemble.GradientBoostingClassifier(verbose=2, learning_rate=0.01, n_estimators=n_estimators)
     suffix = "all_data_all"
