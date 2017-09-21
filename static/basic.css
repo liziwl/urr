@@ -134,12 +134,14 @@
     background-color: #d9534f;
     color: white;
     height: 40px;
+    font-weight: 600;
 }
 
 .cat-pos {
     background-color: #5cb85c;
     color: white;
     height: 40px;
+    font-weight: 600;
 }
 
 html {
