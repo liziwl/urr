@@ -71,13 +71,13 @@
                   <td class="col-md-8">
                     <table width="100%">
                       <tr>
-                        {% if values[0] == 0 %}
-                        <td class="cat-neg" style="width: {{values[1]}}%;" align="center" colspan="2">
-                          {{values[1]}}% ({{values[3]}})
-                        </td>
-                        {% elif values[1] == 0 %}
+                        {% if values[1] == 0 %}
                         <td class="cat-pos" style="width: {{values[0]}}%;" align="center" colspan="2">
                           {{values[0]}}% ({{values[2]}})
+                        </td>
+                        {% elif values[0] == 0 %}
+                        <td class="cat-neg" style="width: {{values[1]}}%;" align="center" colspan="2">
+                          {{values[1]}}% ({{values[3]}})
                         </td>
                         {% else %}
                         <td class="cat-pos" style="width: {{values[0]}}%;" align="center">
