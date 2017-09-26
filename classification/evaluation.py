@@ -3,7 +3,7 @@ import pandas as pd
 import time
 
 REVIEW_FIELD = "reviewText"
-TRAINING_PATH = "./data/all_reviews_data.csv"
+TRAINING_PATH = "./data/reviews_data.csv"
 
 
 def analyze_data():
@@ -29,14 +29,13 @@ def get_evaluation_filename(n_estimators, suffix="", csv=True):
 
 
 def main():
-    subcategories = build_categories_list()
-    subcategories = ["IS_SECURITY", "IS_PRIVACY", "IS_COMPLAINT"]
-    n_estimators = 200
-    clf = ensemble.GradientBoostingClassifier(verbose=2, learning_rate=0.01, n_estimators=n_estimators)
-    suffix = "all_data_all"
+    categories = build_categories_list()
+    n_estimators = 300
+    clf = ensemble.GradientBoostingClassifier(verbose=2, learning_rate=0.1, n_estimators=n_estimators)
+    suffix = "reviews_data"
     results = evaluate_classification(TRAINING_PATH, get_evaluation_filename(n_estimators, suffix, csv=False),
-                                      get_evaluation_filename(n_estimators, suffix), REVIEW_FIELD,
-                                      subcategories, 10, clf, predict, "..")
+                                          get_evaluation_filename(n_estimators, suffix), REVIEW_FIELD,
+                                          categories, 10, clf, predict, "..")
     for key, values in results.iteritems():
         print("%s: %s" % (key, values))
 
