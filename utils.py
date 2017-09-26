@@ -1,7 +1,7 @@
 from os import listdir
 from os.path import isfile, join
 from classification.classification_utils import *
-
+from collections import OrderedDict
 
 PAGE_COUNT = 20
 
@@ -77,7 +77,9 @@ def compute_analysis_data(data, categories, neg_category="IS_" + COMPLAINT):
 def generate_analysis_data(selected_file):
     global saved_data
     compute_classified_reviews_data(selected_file)
-    return compute_analysis_data(saved_data["all_data"], build_pretty_categories_list(), "IS_" + COMPLAINT)
+    analysis_data = compute_analysis_data(saved_data["all_data"], build_pretty_categories_list(), "IS_" + COMPLAINT)
+    analysis_data = OrderedDict(sorted(analysis_data.items(), key=lambda t: t[-1][-1] + t[-1][-2], reverse=True))
+    return analysis_data
 
 
 def get_paged_data(page):
