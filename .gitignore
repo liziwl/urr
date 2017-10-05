@@ -4,7 +4,9 @@ venv/
 .DS_Store
 temp/
 reviews_dataset_preprocessing/reviews_files/
-classified_reviews_cache/
-preprocessed_files/
+classified_reviews_cache/*
+!classified_reviews_cache/.gitkeep
+preprocessed_files/*
+!preprocessed_files/.gitkeep
 classification/internal_data/
 classification/data_backup/
