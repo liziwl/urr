@@ -1,8 +1,0 @@
-nomkl
-flask
-numpy
-pip
-pandas
-scipy
-scikit-learn==0.18.1
-setuptools
