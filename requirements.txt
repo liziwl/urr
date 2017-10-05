@@ -12,6 +12,6 @@ Werkzeug==0.12.1
 WTForms==2.1
 pandas==0.20.3
 scipy==0.19.1
-scikit-learn==0.18.2
+scikit-learn==0.18.1
 snowballstemmer==1.2.1
 nltk==3.2.2
