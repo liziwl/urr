@@ -1,18 +1,24 @@
 About the Tool
 
+AUREA is a tool for analysing, classifying and filtering mobile apps reviews.
+It can be executed as a web app locally after following the installation instructions.
+
 
 Installation Instructions
 
+The project has been tested using macOS Sierra Version 10.12.6, Python 2.7.10 and with
+Google Chrome 59.0.3071.115.
+
+To install, please execute the following instructions:
 - Make sure you have virtualenv installed, if not for Mac OS X you can use the
 following instruction:
     $ sudo pip install virtualenv
 
 - clone project
-    $
+    $ git clone https://github.com/adelinac/urr.git
 
-- create a new directory for the project and navigate to it
-    $ mkdir urr
-    $ cd myproject
+- navigate to the cloned directory
+    $ cd urr
 
 - create a new virtualenv
     $ virtualenv venv
@@ -21,14 +27,19 @@ following instruction:
     $ source ./venv/bin/activate
 
 - install dependencies
-    $
+    $ pip install -r requirements.txt
 
 
 Execution Instructions
 
-After all the packages are installed and you are in the home
-directory of the project, run the following commands:
-source ./venv/bin/activate
-python ./controller.py
+After all the packages are installed and you are in the home directory of the project,
+execute the following commands:
+   $ source ./venv/bin/activate
+   $ python ./controller.py
+   $ open a browser(Chrome) and navigate to http://127.0.0.1:5000/
 
-Additional Data
+Relevant Data
+
+The set of manually labeled reviews can be found at ./urr/classification/data/reviews_data.csv.
+All the files used for the tool demo survey(survey, answers, review files) can be found at: ./urr/tool_survey/.
+
