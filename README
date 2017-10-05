@@ -1,0 +1,34 @@
+About the Tool
+
+
+Installation Instructions
+
+- Make sure you have virtualenv installed, if not for Mac OS X you can use the
+following instruction:
+    $ sudo pip install virtualenv
+
+- clone project
+    $
+
+- create a new directory for the project and navigate to it
+    $ mkdir urr
+    $ cd myproject
+
+- create a new virtualenv
+    $ virtualenv venv
+
+- and activate it
+    $ source ./venv/bin/activate
+
+- install dependencies
+    $
+
+
+Execution Instructions
+
+After all the packages are installed and you are in the home
+directory of the project, run the following commands:
+source ./venv/bin/activate
+python ./controller.py
+
+Additional Data
