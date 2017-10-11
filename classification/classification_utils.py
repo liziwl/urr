@@ -102,7 +102,7 @@ def create_preprocessing_pipeline(text_data):
 def load_and_save_review_data(filepath, review_field, saved_filepath, remove_stopwords=False):
     data = pd.read_csv(filepath, encoding="ISO-8859-1", error_bad_lines=False)
     data["prep_" + review_field] = data[review_field].apply(lambda review: preprocess_review(review, remove_stopwords))
-    data = data.sample(frac=1).reset_index(drop=True)
+    # data = data.sample(frac=1).reset_index(drop=True)
     joblib.dump(data, saved_filepath)
     return data
 

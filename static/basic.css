@@ -135,6 +135,7 @@
     color: white;
     height: 40px;
     font-weight: 600;
+    cursor: default;
 }
 
 .cat-pos {
@@ -142,6 +143,7 @@
     color: white;
     height: 40px;
     font-weight: 600;
+    cursor: default;
 }
 
 html {

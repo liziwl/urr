@@ -52,13 +52,13 @@
         <div class="row">
             <div class="row">
                 <div class="col-md-12">
-                    <h1>User Reviews Analyser</h1>
+                    <h1>AUREA: Automated User REview Analyzer</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-8">
                 <p class="lead">
-                    The User Reviews Analyser is a tool for helping developers analyse the user reviews of their apps.
+                    AUREA is a tool for helping developers analyse the user reviews of their apps.
                     To start, please first upload the csv file of reviews and then use the Classify or Analyze buttons
                     to analyse them.
                 </p>
@@ -137,7 +137,7 @@
                   </thead>
                   <tbody>
                   {% for category in categories %}
-                    <tr>
+                    <tr style="cursor: default;">
                         <td><span class="icon-category icon-{{category[2]}} small" data-toggle="tooltip" title="{{category[2]}}"></span></td>
                         <td><b>{{category[0]}}</b></td>
                         <td>{{category[1]}}</td>
