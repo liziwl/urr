@@ -10,3 +10,5 @@ preprocessed_files/*
 !preprocessed_files/.gitkeep
 classification/internal_data/
 classification/data_backup/
+
+.vscode/
